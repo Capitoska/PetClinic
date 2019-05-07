@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="back.css">
+    <title>PetClinic!</title>
+    <style>
+        h1{
+            font-family: Bradley Hand, cursive;
+            font-size: 5em;
+            color: black;
+            text-shadow: 10px 10px 10px white, 0 0 1em lightblue;
+        }
+        h2{
+            font-family: Bradley Hand, cursive;
+            font-size: 3.5em;
+            color: black;
+            text-shadow: 7px 7px 7px white, 0 0 1em lightblue;
+        }
+        h3{
+            font-family: Bradley Hand, cursive;
+            font-size: 4em;
+            text-shadow: 9px 9px 9px black, 0 0 1em lightblue;
+
+        }
+        p{
+            font-family: Bradley Hand, cursive;
+            /*font-family: Bradley Hand;*/
+            font-size: 26px;
+            font-weight: 900;
+            color: black;
+        }
+        .paddingText {
+            padding: 10px;
+        }
+        .leftimg {
+            float:left; /* Выравнивание по левому краю */
+            margin: 15px 15px 15px 0; /* Отступы вокруг картинки */
+            border: 2px solid black;
+        }
+        .rightimg  {
+            float: right; /* Выравнивание по правому краю  */
+            margin: 7px 0 7px 7px; /* Отступы вокруг картинки */
+        }
+        .shadow{
+            box-shadow: inset 0px 0px 40px 40px #DBA632;
+        }
+
+
+    </style>
+</head>
+</html>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<div class="container-fluid" style="padding: 0px">
+    <div class="container-fluid" style="padding: 0px">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+            <div class="col-md-1">
+                <!--<img src="https://i.imgur.com/KZsHvRS.png" width="50" height="50">-->
+                <img src="https://image.flaticon.com/icons/svg/1642/1642899.svg" width="50" height="50">
+            </div>
+            <!--<a class="navbar-brand" href="index.php">Достижения клиники</a>-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="https://vk.com/javawithfitr" target="_blank">Группа
+                        VK</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/" target="_blank">О
+                        клинике</a></li>
+                    <li class="nav-item "><a class="nav-link" href="/best-doctors">Лучшие доктора недели</a></li>
+                </ul>
+
+                <button id="ip-text1" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 " type="submit"
+                        onclick="prompt('Скопируйте наш IP адрес и вставьте в ваш клиент:','MC.YOTTACRAFT.RU'); return false;">
+                    Войти
+                </button>
+
+                <button id="ip-text" class="btn btn-success my-2 my-lg-0" type="submit" data-toggle="modal"
+                        data-target="#exampleModalCenter">
+                    Зарегистрироваться
+                </button>
+
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+</div>
+
+<h1 align="center" >Ветеринарная клиника </h1>
+</br>
+
+<div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="2500">
+                <img src="https://99px.ru/sstorage/53/2016/10/tmb_179973_5182.jpg"  width="720" height="550" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Мы заботимся о Ваших животных...</h3>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <img src="https://bugaga.ru/uploads/posts/2016-12/1481636722_deti-i-sobaki-8.jpg" width="720" height="550"  class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Мы сохраним им жизнь...</h3>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-interval="2000">
+                <img src="https://99px.ru/sstorage/53/2016/10/tmb_179972_3349.jpg" width="720" height="550"  class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Животные - лучшие друзья человека...</h3>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-interval="2000">
+                <img src="http://s1.1zoom.me/big0/281/428600-Kycb.jpg" width="720" height="550" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Каждый клиент важен для нас...</h3>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <img src="https://4.bp.blogspot.com/-bfQCM85pM2s/VEqa6Mno71I/AAAAAAAAAyw/irwbo6CoHH8/s1600/shutterstock_222493828_girldogpark.jpg" width="720" height="550" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Животные - наше счастье...</h3>
+                </div>
+            </div>
+
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+</br>
+<h2 align="center">О нас... </h2>
+<p  class="paddingText"><img src="http://pngimg.com/uploads/cat/cat_PNG50539.png" class="leftimg" align="left" width="530" height="350">
+    Обследование домашнего питомца — сложная работа, требующая понимания мельчайших признаков заболевания. Все это возможно лишь в том случае, если ветеринарный врач обладает безграничной любовью к животному. Ветврачу необходимо особое чутье, ведь его пациенты не расскажут о проблемах, действовать нужно терпеливо, внимательно и мгновенно, дабы распознать любые симптомы болезни и предотвратить страдания. Претендовать на открытые вакансии ветврачей в клинике «ВетМедЦентр» могут только лучшие белорусские специалисты.
+
+    Щадящее отношение к животному является одним из приоритетов в работе специалистов ветеринарной клиники «ВетМедЦентр». При выборе алгоритма лечения принимаются во внимание все видовые и индивидуальные особенности животного. Хозяину не придется беспокоиться, так как наши специалисты быстро проведут диагностику, назначат эффективное лечение и проследят за реабилитацией Вашего любимца.</p>
+<p class="paddingText"><img src="https://www.searchpng.com/wp-content/uploads/2018/12/Dog-PNG-Image-715x715.png" class="leftimg" align="right" width="400" height="370">
+    Обследование домашнего питомца — сложная работа, требующая понимания мельчайших признаков заболевания. Все это возможно лишь в том случае, если ветеринарный врач обладает безграничной любовью к животному. Ветврачу необходимо особое чутье, ведь его пациенты не расскажут о проблемах, действовать нужно терпеливо, внимательно и мгновенно, дабы распознать любые симптомы болезни и предотвратить страдания. Претендовать на открытые вакансии ветврачей в клинике «ВетМедЦентр» могут только лучшие белорусские специалисты.
+
+    Щадящее отношение к животному является одним из приоритетов в работе специалистов ветеринарной клиники «ВетМедЦентр». При выборе алгоритма лечения принимаются во внимание все видовые и индивидуальные особенности животного. Хозяину не придется беспокоиться, так как наши специалисты быстро проведут диагностику, назначат эффективное лечение и проследят за реабилитацией Вашего любимца.</p>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="margin-left: 8em">Type of users</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/login" method="get">
+                <div class="modal-body">
+                    <button name="doctor" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
+                        Doctor
+                    </button>
+                    <button name="owner" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
+                        Owner
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
