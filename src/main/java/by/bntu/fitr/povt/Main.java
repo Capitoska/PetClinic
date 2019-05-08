@@ -1,23 +1,60 @@
 package by.bntu.fitr.povt;
 
-import by.bntu.fitr.povt.model.ModelTest;
-import by.bntu.fitr.povt.model.Player;
-import by.bntu.fitr.povt.model.User;
-import org.apache.logging.log4j.core.Logger;
-import org.apache.logging.log4j.core.config.Order;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import org.hibernate.SessionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.sql.DataSource;
+import java.sql.DriverManager;
+import java.util.Properties;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)
 public class Main {
     public static void main(String[] args) {
 
         SpringApplication.run(Main.class, args);
+    }
+
+    @Bean
+    public DataSource dataSource() {
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setUrl("jdbc:mysql://localhost:3306/pets?true&useSSL=false");
+        dataSource.setDatabaseName("pets");
+        dataSource.setUser("root");
+        dataSource.setPassword("32163216");
+        return dataSource;
+    }
+
+    @Bean
+    public LocalSessionFactoryBean sessionFactory(DataSource source) {
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setDataSource(source);
+        sessionFactory.setPackagesToScan("by.bntu.fitr.povt.model");
+
+        Properties prop = new Properties();
+        prop.setProperty("hibernate.hbm2ddl.auto", "validate");
+        prop.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL55Dialect");
+
+        prop.setProperty("hibernate.show_sql", "false");
+        prop.setProperty("hibernate.format_sql", "false");
+        prop.setProperty("hibernate.use_sql_comments", "false");
+        prop.setProperty("hibernate.generate_statistics", "false");
+        prop.setProperty("hibernate.jdbc.batch_size", "20");
+
+        sessionFactory.setHibernateProperties(prop);
+        return sessionFactory;
+    }
+
+    @Bean
+    public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
+        HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager();
+        hibernateTransactionManager.setSessionFactory(sessionFactory);
+        return hibernateTransactionManager;
     }
 }
