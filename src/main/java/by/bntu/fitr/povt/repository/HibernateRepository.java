@@ -1,6 +1,7 @@
 package by.bntu.fitr.povt.repository;
 
 import lombok.Setter;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 

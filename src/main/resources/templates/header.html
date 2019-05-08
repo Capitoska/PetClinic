@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="header">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="back.css">
+        <title>Hello, world!</title>
+    </head>
+    <body>
+
+    <div class="container-fluid" style="padding: 0px">
+        <div class="container-fluid" style="padding: 0px" >
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+                <div class="col-md-1">
+                    <!--<img src="https://i.imgur.com/KZsHvRS.png" width="50" height="50">-->
+                    <img src="https://image.flaticon.com/icons/svg/1642/1642899.svg" width="50" height="50">
+                </div>
+                <!--<a class="navbar-brand" href="index.php">Достижения клиники</a>-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="https://vk.com/javawithfitr" target="_blank">Группа
+                            VK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about" >О
+                            клинике</a></li>
+                        <li class="nav-item "><a class="nav-link" href="/best-doctors">Лучшие доктора недели</a></li>
+                    </ul>
+
+                    <a href="/sign-in">
+                        <button id="ip-text1" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 " type="submit">
+                            Войти
+                        </button>
+                    </a>
+
+                    <button id="ip-text" class="btn btn-success my-2 my-lg-0" type="submit" data-toggle="modal"
+                            data-target="#exampleModalCenter">
+                        Зарегистрироваться
+                    </button>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </nav>
+
+        </div>
+    </div>
+
+
+
+    <!-- Modal Registation for user -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="margin-left: 8em">Type of users</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/sign-up" method="get">
+                    <div class="modal-body">
+                        <button name="doctor" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
+                            Doctor
+                        </button>
+                        <button name="owner" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
+                            Owner
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+</th:block>

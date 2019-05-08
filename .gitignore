@@ -1,3 +1,13 @@
+# Файлы IDEA
+dependency-reduced-pom.xml
+*.iml
+
+# В runConfigurations находятся запускаторы
+/.idea/*
+!/.idea/runConfigurations/
+
+/logs/*
+
 # Compiled class file
 *.class
 

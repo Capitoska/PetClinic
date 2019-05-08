@@ -22,7 +22,7 @@ public class DefaultClientService implements ClientService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public List<Client> getAll() {
         return clientRepository.findAll();
     }

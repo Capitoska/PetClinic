@@ -39,14 +39,6 @@ public class MainController {
         log.info(nickName + " " + phoneNumber + " " + password + " " + exit + " " + reg);
         return "index1";
     }*/
-//
-//    @GetMapping("/login")
-//    public String log(@RequestParam(name = "doctor", required = false) String doctor,
-//                      @RequestParam(name = "phoneNumber", required = false) String phoneNumber, Model model) {
-//        model.addAttribute("BphoneNumber", phoneNumber);
-//        return "test";
-//    }
-//
 
     @GetMapping("/best-doctors")
     public String bestDoctors(Model model) {
@@ -58,8 +50,14 @@ public class MainController {
         return "about";
     }
 
-    @GetMapping("/login")
-    public String login(
+    @GetMapping("/about")
+    public String about(){
+        return "about";
+    }
+
+
+    @GetMapping("/sign-up")
+    public String signUp(
             @RequestParam(name = "doctor", required = false) String doctor,
             @RequestParam(name = "owner", required = false) String owner,
             Model model) {
@@ -67,6 +65,11 @@ public class MainController {
         boolean isDoctor = doctor != null;
         log.info(isDoctor);
         model.addAttribute("isDoctor", isDoctor);
-        return "login";
+        return "sign-up";
+    }
+
+    @GetMapping("/sign-in")
+    public String signIn(){
+        return "sign-in";
     }
 }
