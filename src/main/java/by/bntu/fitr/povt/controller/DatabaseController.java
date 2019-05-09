@@ -1,7 +1,7 @@
 package by.bntu.fitr.povt.controller;
 
-import by.bntu.fitr.povt.service.ClientService;
 import by.bntu.fitr.povt.model.Client;
+import by.bntu.fitr.povt.service.ClientService;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,14 +16,16 @@ public class DatabaseController {
 
     @Setter(onMethod_ = @Autowired)
     private ClientService clientService;
-//http://localhost:8080/data/add?newFirstName=test&newSecondName=test2&newHandle=345
+
+    //http://localhost:8080/data/add?newFirstName=test&newSecondName=test2&newHandle=345
     @GetMapping("/add")
-    public @ResponseBody String add(@RequestParam String newFirstName,
-                                    @RequestParam String newSecondName,
-                                    @RequestParam String newUsername,
-                                    @RequestParam String newPassword,
-                                    @RequestParam Integer newPhoneNumber
-                                    ){
+    public @ResponseBody
+    String add(@RequestParam String newFirstName,
+               @RequestParam String newSecondName,
+               @RequestParam String newUsername,
+               @RequestParam String newPassword,
+               @RequestParam Integer newPhoneNumber
+    ) {
         Client client = new Client();
         client.setUsername(newUsername);
         client.setFirstName(newFirstName);
@@ -35,7 +37,8 @@ public class DatabaseController {
     }
 
     @GetMapping("/all")
-    public @ResponseBody Iterable<Client> all(){
+    public @ResponseBody
+    Iterable<Client> all() {
         return clientService.getAll();
     }
 }

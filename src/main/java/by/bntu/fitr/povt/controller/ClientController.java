@@ -6,4 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/user")
 public class ClientController {
 
+
+    @GetMapping("/person-page")
+    public String PersonPage() {
+        return "person-page";
+    }
 }

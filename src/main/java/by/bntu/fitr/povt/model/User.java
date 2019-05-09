@@ -23,4 +23,5 @@ public class User {
     private Integer phoneNumber;
     @Column(nullable = false)
     private String password;
+
 }

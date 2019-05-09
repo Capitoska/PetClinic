@@ -1,16 +1,26 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="header :: header"></div>
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="../static/style.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
     <style>
         .list-group-item-mine {
-            background-color: ghostwhite;
+            background-color: mistyrose;
+            border-radius: 5px;
         }
         .btn2{
            background: #352A3B;
             width: 200px;
             height: 60px;
+            border-radius: 10px;
         }
         .add:before  {
             margin-right: 15px;
@@ -24,6 +34,7 @@
             margin-right: 15px;
             content: "\270D";
         }
+
     </style>
 </head>
 <div class="container-fluid" style="padding: 0px">
@@ -63,6 +74,152 @@
 
 </div>
 </div>
+
+
+<!-- Modal Registation for user -->
+<div class="modal fade" id="addPet" tabindex="-1" role="dialog" aria-labelledby="addPetTitleTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPetTitle" style="margin-left: 8em">Добавить питомца</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <form action="/login" method="get">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Имя"  id="PetName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!--<label for="exampleFormControlSelect1">Example select</label>-->
+                        <select class="form-control" id="Type" placeholder="Порода">
+                            <option>Собака</option>
+                            <option>Кот</option>
+                            <option>Грызун</option>
+                            <option>Кролик</option>
+                            <option>Морская свинка</option>
+                            <option>Черепаха</option>
+                            <option>Екзотическое</option>
+                        </select>
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<div class="input-group">-->
+                            <!--<input type="text" class="form-control" placeholder="Порода" id="Type">-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Возраст" id="Age">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Пол" id="Gender">
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<div class="main-checkbox">-->
+                            <!--<input type="checkbox" value="none" id="checkbox1" name="check"/>-->
+                            <!--<label for="checkbox1"></label>-->
+                            <!--<span class="text">Добавить по ID</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" class="btn btn-secondary" data-toggle="modal"
+                            data-target="#Success"  data-dismiss="modal">Добавить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addPetID" tabindex="-1" role="dialog" aria-labelledby="addPetIDTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPetIDTitle" style="margin-left: 8em">Добавить питомца по ID</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <form action="/login" method="get">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="ID"  id="ID">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" class="btn btn-secondary" data-target="#Success"  data-toggle="modal" data-dismiss="modal">Добавить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal" tabindex="-1" role="note" id="Success" >
+    <div class="modal-dialog modal-dialog-centered" role="note">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Питомец добавлен</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal Registation for user -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="margin-left: 8em">Type of users</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/login" method="get">
+                <div class="modal-body">
+                    <button name="doctor" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
+                        Doctor
+                    </button>
+                    <button name="owner" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
+                        Owner
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <div>
     <header class="page-header">
@@ -136,11 +293,14 @@
     <div class="col-md-3">
         <div class="btn-group-vertical">
 
-            <button type="button" class="btn2 btn-dark add">Добавить</button>
+            <button type="button" class="btn2 btn-dark add" data-target="#addPet" data-toggle="modal">Добавить</button>
+            </br>
+            <button type="button" class="btn2 btn-dark add" data-target="#addPetID" data-toggle="modal" >Добавить по ID</button>
             </br>
             <button type="button" class="btn2 btn-dark del">Удалить</button>
             </br>
             <button type="button" class="btn2 btn-dark rec">Запись на прием</button>
+
         </div>
     </div>
 </div>

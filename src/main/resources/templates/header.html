@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <th:block th:fragment="header">
     <head>
@@ -14,7 +14,7 @@
     <body>
 
     <div class="container-fluid" style="padding: 0px">
-        <div class="container-fluid" style="padding: 0px" >
+        <div class="container-fluid" style="padding: 0px">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
                 <div class="col-md-1">
                     <!--<img src="https://i.imgur.com/KZsHvRS.png" width="50" height="50">-->
@@ -25,23 +25,43 @@
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item"><a class="nav-link" href="https://vk.com/javawithfitr" target="_blank">Группа
                             VK</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/about" >О
+                        <li class="nav-item"><a class="nav-link" href="/about">О
                             клинике</a></li>
                         <li class="nav-item "><a class="nav-link" href="/best-doctors">Лучшие доктора недели</a></li>
                     </ul>
+                    <div sec:authorize="isAnonymous()">
+                        <a href="/sign-in">
+                            <button id="ip-text1" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 "
+                                    type="submit">
+                                Войти
+                            </button>
+                        </a>
 
-                    <a href="/sign-in">
-                        <button id="ip-text1" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 " type="submit">
-                            Войти
+                        <button id="ip-text" class="btn btn-success my-2 my-lg-0" type="submit" data-toggle="modal"
+                                data-target="#exampleModalCenter">
+                            Зарегистрироваться
                         </button>
-                    </a>
+                    </div>
+                    <div sec:authorize="!isAnonymous()">
+                        <div class="row">
+                            <form action="/person-page" method="get">
+                                <button id="ip-123" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 "
+                                        type="submit">
+                                    Личный кабинет
+                                </button>
+                            </form>
 
-                    <button id="ip-text" class="btn btn-success my-2 my-lg-0" type="submit" data-toggle="modal"
-                            data-target="#exampleModalCenter">
-                        Зарегистрироваться
-                    </button>
+                            <form th:action="@{/logout}" method="post">
+                                <button id="ip-logout" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 "
+                                        type="submit">
+                                    Выйти
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,9 +72,9 @@
     </div>
 
 
-
     <!-- Modal Registation for user -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -66,7 +86,7 @@
                 </div>
                 <form action="/sign-up" method="get">
                     <div class="modal-body">
-                        <button name="doctor" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
+                        <button name="doctor" type="submit" class="btn btn-success" st yle="width:220px;height: 100px;">
                             Doctor
                         </button>
                         <button name="owner" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
