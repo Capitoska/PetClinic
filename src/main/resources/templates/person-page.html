@@ -1,79 +1,37 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="header :: header"></div>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <!--<link rel="stylesheet" href="../static/style.css">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>Hello, world!</title>
     <style>
         .list-group-item-mine {
             background-color: mistyrose;
             border-radius: 5px;
         }
-        .btn2{
-           background: #352A3B;
+
+        .btn2 {
+            background: #352A3B;
             width: 200px;
             height: 60px;
             border-radius: 10px;
         }
-        .add:before  {
+
+        .add:before {
             margin-right: 15px;
             content: "\2705";
         }
-        .del:before  {
+
+        .del:before {
             margin-right: 15px;
             content: "\274C";
         }
-        .rec:before{
+
+        .rec:before {
             margin-right: 15px;
             content: "\270D";
         }
 
     </style>
 </head>
-<div class="container-fluid" style="padding: 0px">
-    <div class="container-fluid" style="padding: 0px" >
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-            <div class="col-md-1">
-                <!--<img src="https://i.imgur.com/KZsHvRS.png" width="50" height="50">-->
-                <img src="https://image.flaticon.com/icons/svg/1642/1642899.svg" width="50" height="50">
-            </div>
-            <!--<a class="navbar-brand" href="index.php">Достижения клиники</a>-->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="https://vk.com/javawithfitr" target="_blank">Группа
-                        VK</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://discord.gg/b3k8dDE" target="_blank">О
-                        клинике</a></li>
-                    <li class="nav-item "><a class="nav-link" href="rules.php">Лучшие доктора недели</a></li>
-                </ul>
-
-                <button id="ip-text1" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 " type="submit"
-                        onclick="prompt('Скопируйте наш IP адрес и вставьте в ваш клиент:','MC.YOTTACRAFT.RU'); return false;">
-                    Войти
-                </button>
-
-                <button id="ip-text" class="btn btn-success my-2 my-lg-0" type="submit" data-toggle="modal"
-                        data-target="#exampleModalCenter">
-                    Зарегистрироваться
-                </button>
-
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-    </div>
-
-</div>
-</div>
 
 
 <!-- Modal Registation for user -->
@@ -90,17 +48,20 @@
                 </button>
 
             </div>
-            <form action="/login" method="get">
+            <form id="pet-form" action="/user/addPet" method="post">
+                <div id="pet-form-alert" class="alert alert-danger d-none" role="alert">
+                    Вы ввели неправильные данные
+                </div>
                 <div class="modal-body">
 
-                    <div class="form-group">
+                <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Имя"  id="PetName">
+                            <input type="text" class="form-control" name="name" placeholder="Имя" id="PetName">
                         </div>
                     </div>
                     <div class="form-group">
                         <!--<label for="exampleFormControlSelect1">Example select</label>-->
-                        <select class="form-control" id="Type" placeholder="Порода">
+                        <select name="selectType" class="form-control" id="Type" placeholder="Порода">
                             <option>Собака</option>
                             <option>Кот</option>
                             <option>Грызун</option>
@@ -111,31 +72,20 @@
                         </select>
                     </div>
 
-                    <!--<div class="form-group">-->
-                        <!--<div class="input-group">-->
-                            <!--<input type="text" class="form-control" placeholder="Порода" id="Type">-->
-                        <!--</div>-->
-                    <!--</div>-->
-
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Возраст" id="Age">
+                        <input class="form-control" name="age" type="text" placeholder="Возраст" id="Age">
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Пол" id="Gender">
+                        <select name="gender" class="form-control" id="Gender" placeholder="Пол">
+                            <option value="Man">Мужской</option>
+                            <option value="Woman">Женский</option>
+                        </select>
                     </div>
 
-                    <!--<div class="form-group">-->
-                        <!--<div class="main-checkbox">-->
-                            <!--<input type="checkbox" value="none" id="checkbox1" name="check"/>-->
-                            <!--<label for="checkbox1"></label>-->
-                            <!--<span class="text">Добавить по ID</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success my-2 my-lg-0" class="btn btn-secondary" data-toggle="modal"
-                            data-target="#Success"  data-dismiss="modal">Добавить
+                    <button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить
                     </button>
                 </div>
             </form>
@@ -143,7 +93,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addPetID" tabindex="-1" role="dialog" aria-labelledby="addPetIDTitle"
+<div class="modal fade" id="addPetById" tabindex="-1" role="dialog" aria-labelledby="addPetIDTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -156,75 +106,161 @@
                 </button>
 
             </div>
+            <form id="pet-form-by-Id" name="pet-form-by-Id" action="/user/addPetById" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="pet-id" placeholder="ID" id="ID">
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="modal-footer">-->
+                    <!--<button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить-->
+                    <!--</button>-->
+                <!--</div>-->
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="add-pet-button by " name="add-pet-button-id">Добавить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="note" id="Success">
+    <div class="modal-dialog modal-dialog-centered" role="note">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Питомец добавлен</h5>
+                <button type="button" id="modal-close-button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" tabindex="-1" role="note" id="SuccessWrite">
+    <div class="modal-dialog modal-dialog-centered" role="note">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Питомец записан</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deletePetID" tabindex="-1" role="dialog" aria-labelledby="deletePetIDTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePetIDTitle" style="margin-left: 8em">Удалить питомца по ID</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
             <form action="/login" method="get">
                 <div class="modal-body">
 
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="ID"  id="ID">
+                            <input type="text" class="form-control" placeholder="ID">
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success my-2 my-lg-0" class="btn btn-secondary" data-target="#Success"  data-toggle="modal" data-dismiss="modal">Добавить</button>
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" data-target="#SuccessDelete"
+                            data-toggle="modal" data-dismiss="modal">Удалить
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-
-
-
-<div class="modal" tabindex="-1" role="note" id="Success" >
-    <div class="modal-dialog modal-dialog-centered" role="note">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Питомец добавлен</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
 <!-- Modal Registation for user -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal fade" id="goToDoctor" tabindex="-1" role="dialog" aria-labelledby="goToDoctorTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle" style="margin-left: 8em">Type of users</h5>
+                <h5 class="modal-title" id="goToDoctorTitle" style="margin-left: 8em">Записать на прием</h5>
+
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/login" method="get">
+
+            <form action="/user/addPet" method="get">
                 <div class="modal-body">
-                    <button name="doctor" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
-                        Doctor
-                    </button>
-                    <button name="owner" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
-                        Owner
-                    </button>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="ID животного" id="IDPet">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!--<label for="exampleFormControlSelect1">Example select</label>-->
+                        <select name="selectType" class="form-control" id="TypeOfDoctor" placeholder="Доктор">
+                            <option>Терапевт</option>
+                            <option>Хирург</option>
+                            <option>Офтальмолог</option>
+                            <option>Дерматолог</option>
+                            <option>Кардиолог</option>
+                            <option>Стоматолог</option>
+                            <option>Гинеколог</option>
+                            <option>Профилактолог</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" name="gender" type="text" placeholder="Что случилось?" id="Ill">
+                    </div>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="addAllPet" class="btn btn-success my-2 my-lg-0" data-toggle="modal"
+                            data-target="#SuccessWrite" data-dismiss="modal">Записать
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
+<div class="modal" tabindex="-1" role="note" id="SuccessDelete">
+    <div class="modal-dialog modal-dialog-centered" role="note">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Питомец удален</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div>
     <header class="page-header">
         </br>
-    <h1 class="page-title" align="center">Личная страница</h1>
+        <h1 class="page-title" align="center">Личная страница</h1>
     </header>
 </div>
 
@@ -233,91 +269,74 @@
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-3">
-    <figure>
-        <img class="rounded-circle" alt="" src="https://i.pinimg.com/originals/2d/0f/79/2d0f796f4655baeca812ed1b7af9abf7.jpg" width="300" height="300">
-    </figure>
+        <figure>
+            <img class="rounded-circle" alt=""
+                 src="https://i.pinimg.com/originals/2d/0f/79/2d0f796f4655baeca812ed1b7af9abf7.jpg" width="300"
+                 height="300">
+        </figure>
     </div>
     <div class="col-md-7">
         <br class="list-group" style="height: 300px">
-            </br>
-            <li class="list-group-item list-group-item-mine" id="name">Name</li>
-            <li class="list-group-item list-group-item-mine" id="surname">Surname</li>
-            <li class="list-group-item list-group-item-mine" id="NickName">NickName</li>
-            <li class="list-group-item list-group-item-mine" id="phone"><i class="fa fa-phone"></i> +37529..... </li>
+        </br>
+        <li class="list-group-item list-group-item-mine" id="name"><p th:text="${firstName}" style="margin: 0px"/></li>
+        <li class="list-group-item list-group-item-mine" id="surname"><p th:text="${secondName}" style="margin: 0px"/>
+        </li>
+        <li class="list-group-item list-group-item-mine" id="NickName"><p th:text="${nickname}" style="margin: 0px"/>
+        </li>
+        <li class="list-group-item list-group-item-mine" id="phone"><i class="fa fa-phone"></i>
+            <p th:text="${phone}" style="margin: 0px"/></li>
         </ul>
     </div>
 </div>
 
 <h2 align="center">Ваши животные</h2>
 </br>
+<div class="row" align="center">
+    <div class="col-md-3"></div>
+    <div class="btn-group-horizontal">
+        <button type="button" class="btn2 btn-dark add" data-target="#addPet" style="margin-right: 5px"
+                data-toggle="modal">Добавить
+        </button>
+        <button type="button" class="btn2 btn-dark add" data-target="#addPetById" style="margin-right: 5px"
+                data-toggle="modal">Добавить по ID
+        </button>
+        <button type="button" style="margin-right: 5px" class="btn2 btn-dark del" data-target="#deletePetID" data-toggle="modal">Удалить</button>
+        <button type="button" style="margin-right: 5px" class="btn2 btn-dark rec" data-target="#goToDoctor" data-toggle="modal" >Запись на прием</button>
+    </div>
+</div>
+</br>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-8">
+    <div class="col-md-10">
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th>№</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Age</th>
+                <th>Gender</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@TwBootstrap</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td >Larry the Bird</td>
-                <td>Thornton</td>
-                <td>@twitter</td>
-            </tr>
+            <th:block th:each="pet,iter : ${pets}">
+                <tr>
+                    <td th:text="${iter.index} + 1"></td>
+                    <td th:text="${pet.getId()}"></td>
+                    <td th:text="${pet.getName()}"></td>
+                    <td th:text="${pet.getType()}"></td>
+                    <td th:text="${pet.getAge()}"></td>
+                    <td th:text="${pet.getGender()}"></td>
+                </tr>
+            </th:block>
             </tbody>
         </table>
     </div>
-    <div class="col-md-3">
-        <div class="btn-group-vertical">
 
-            <button type="button" class="btn2 btn-dark add" data-target="#addPet" data-toggle="modal">Добавить</button>
-            </br>
-            <button type="button" class="btn2 btn-dark add" data-target="#addPetID" data-toggle="modal" >Добавить по ID</button>
-            </br>
-            <button type="button" class="btn2 btn-dark del">Удалить</button>
-            </br>
-            <button type="button" class="btn2 btn-dark rec">Запись на прием</button>
-
-        </div>
-    </div>
 </div>
 
-<!--</div>-->
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+<div th:replace="footer :: footer"></div>
 </body>
 </html>
 

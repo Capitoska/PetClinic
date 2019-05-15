@@ -1,6 +1,7 @@
 package by.bntu.fitr.povt;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import com.p6spy.engine.spy.P6DataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +27,7 @@ public class Main {
         dataSource.setDatabaseName("pets");
         dataSource.setUser("root");
         dataSource.setPassword("32163216");
-        return dataSource;
+        return new P6DataSource(dataSource);
     }
 
     @Bean

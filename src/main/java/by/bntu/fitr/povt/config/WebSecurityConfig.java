@@ -1,6 +1,7 @@
 package by.bntu.fitr.povt.config;
 
 import lombok.Setter;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,15 +14,18 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements InitializingBean {
     @Setter(onMethod_ = @Autowired)
     private DataSource dataSource;
+    private AuthenticationManagerBuilder auth;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf()
+                .disable()
                 .authorizeRequests()
-                .antMatchers("/", "/about", "/card", "/sign-up", "/**.css", "/reg-doctor", "/reg-owner").permitAll()
+                .antMatchers("/", "/about", "/card", "/sign-up", "/**.css", "/reg-doctor", "/reg-owner", "/**.js").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -35,7 +39,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+        this.auth = auth;
+    }
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance())
                 .usersByUsernameQuery(
@@ -43,5 +51,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery(
                         "select username, role from clients where username=?");
     }
-
 }

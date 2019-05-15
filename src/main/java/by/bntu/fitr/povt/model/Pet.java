@@ -3,6 +3,7 @@ package by.bntu.fitr.povt.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -13,13 +14,18 @@ public class Pet {
     @Column(nullable = false)
     private Integer id;
 
-    @Column(nullable = false)
-    private Integer gender;
-    @Column(nullable = false)
+    @Column(name = "gender", nullable = false)
+    private String gender;
+
+    @Column(name = "type",nullable = false)
     private String type;
-    @Column(nullable = false)
+    @Column(name = "name",nullable = false)
     private String name;
-    @Column(nullable = false)
+
+    @Column(name = "age",nullable = false)
     private Integer age;
+
+//    @OneToMany
 //    private List<DiseaseHistory> medicalCard;
+
 }

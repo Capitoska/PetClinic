@@ -5,6 +5,8 @@ import by.bntu.fitr.povt.service.ClientService;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -80,11 +82,6 @@ public class MainController {
         model.addAttribute("isDoctor", false);
         log.info("test {}", client);
         return "card";
-    }
-
-    @GetMapping("/person-page")
-    public String PersonPage() {
-        return "person-page";
     }
 
     @GetMapping("/reg-doctor")

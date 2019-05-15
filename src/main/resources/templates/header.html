@@ -8,7 +8,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="back.css">
+        <link rel="stylesheet" href="/back.css">
         <title>Hello, world!</title>
     </head>
     <body>
@@ -17,10 +17,8 @@
         <div class="container-fluid" style="padding: 0px">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
                 <div class="col-md-1">
-                    <!--<img src="https://i.imgur.com/KZsHvRS.png" width="50" height="50">-->
                     <img src="https://image.flaticon.com/icons/svg/1642/1642899.svg" width="50" height="50">
                 </div>
-                <!--<a class="navbar-brand" href="index.php">Достижения клиники</a>-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item"><a class="nav-link" href="https://vk.com/javawithfitr" target="_blank">Группа
@@ -44,7 +42,7 @@
                     </div>
                     <div sec:authorize="!isAnonymous()">
                         <div class="row">
-                            <form action="/person-page" method="get">
+                            <form action="/user/person-page" method="get">
                                 <button id="ip-123" style="margin-right: 15px" class="btn btn-success my-2 my-lg-0 "
                                         type="submit">
                                     Личный кабинет
@@ -86,7 +84,7 @@
                 </div>
                 <form action="/sign-up" method="get">
                     <div class="modal-body">
-                        <button name="doctor" type="submit" class="btn btn-success" st yle="width:220px;height: 100px;">
+                        <button name="doctor" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
                             Doctor
                         </button>
                         <button name="owner" type="submit" class="btn btn-success" style="width:220px;height: 100px;">
