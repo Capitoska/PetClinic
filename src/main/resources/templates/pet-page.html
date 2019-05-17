@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="header :: header"></div>
+<head>
+    <style>
+        .list-group-item-mine {
+            background-color: mistyrose;
+            border-radius: 5px;
+        }
+
+        .btn2 {
+            background: #352A3B;
+            width: 300px;
+            height: 80px;
+            border-radius: 10px;
+        }
+
+        .add:before {
+            margin-right: 15px;
+            content: "\2705";
+        }
+
+        .del:before {
+            margin-right: 15px;
+            content: "\274C";
+        }
+
+        .rec:before {
+            margin-right: 15px;
+            content: "\270D";
+        }
+
+    </style>
+</head>
+
+
+<div>
+    <header class="page-header">
+        </br>
+        <h1 class="page-title" align="center">Личная страница питомца</h1>
+    </header>
+</div>
+
+<!--<div>-->
+<!--<p class="col-xs-12 col-sm-8">-->
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <figure>
+            <img class="rounded-circle" alt=""
+                 src="https://image.flaticon.com/icons/png/512/37/37318.png" width="300"
+                 height="300">
+        </figure>
+    </div>
+    <div class="col-md-7">
+        <br class="list-group" style="height: 300px">
+        </br>
+        <li class="list-group-item list-group-item-mine" id="name">Грейси</li>
+        <li class="list-group-item list-group-item-mine" id="surname">Кот
+        </li>
+        <li class="list-group-item list-group-item-mine" id="NickName">Кот
+        </li>
+
+    </div>
+</div>
+<h2 align="center">Симптомы</h2>
+<!--<div class="row">-->
+    <!--<div class="col-md-2"></div>-->
+    <!--<div class="col-md-">-->
+        <!--<br class="list-group" style="height: 300px">-->
+        <!--</br>-->
+        <!--<li class="list-group-item list-group-item-mine"><p th:text="Насморк" style="margin: 0px"/></li>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Date</th>
+                <th>Symptom</th>
+                <th>Writer</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>17.05.2019</td>
+                <td>Насморк </td>
+                <td>Даша Косякова(kosya_kosia)</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+</br>
+<div class="row" align="center">
+    <div class="col-md-4"></div>
+    <div class="btn-group-horizontal">
+
+
+    </div>
+</div>
+</br>
+
+
+<div th:replace="footer :: footer"></div>
+</body>
+</html>
+

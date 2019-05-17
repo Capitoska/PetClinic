@@ -68,10 +68,9 @@ public class MainController {
         model.addAttribute("specialtyList", Arrays.asList(Specialty.values()));
         return "sign-up";
     }
-
+ // Стояло ResponseBody ....
     @PostMapping("/reg-owner")
-    public @ResponseBody
-    String registration(@RequestParam(name = "firstName", defaultValue = "User") String newfirstName,
+    public String registration(@RequestParam(name = "firstName", defaultValue = "User") String newfirstName,
                         @RequestParam(name = "secondName", defaultValue = "") String newsecondName,
                         @RequestParam(name = "nickname", defaultValue = "") String newnickname,
                         @RequestParam(name = "telephone", defaultValue = "") String newtelephone,
@@ -88,8 +87,7 @@ public class MainController {
         clientService.createClient(client);
         model.addAttribute("isDoctor", false);
         log.info("test {}", client);
-        // TODO: 5/17/2019 Заменить на регистрация прошла успешно
-        return "card";
+        return "success-reg";
     }
 
     @PostMapping("/reg-doctor")
@@ -115,7 +113,6 @@ public class MainController {
         doctor.setRole(Role.DOCTOR);
         log.info("All good");
         doctorService.createDoctor(doctor, doctorInfo);
-        // TODO: 5/17/2019 Заменить на регистрация прошла успешно
-        return "Nice";
+        return "success-reg";
     }
 }

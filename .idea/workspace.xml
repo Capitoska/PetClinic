@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b14f8eb-6a4d-4603-912e-afae64485473" name="Default" comment="Connected class Doctor with Database, registration for Doctors, reedit html files.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/DoctorInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/DoctorInfoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/DoctorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateDoctorInfoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateDoctorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultDoctorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DoctorService.java" afterDir="false" />
+    <list default="true" id="9b14f8eb-6a4d-4603-912e-afae64485473" name="Default" comment="update for Da">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/pet-page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/success-reg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/DatabaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/DiseaseHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/DiseaseHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/PetGender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/PetGender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Specialty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Specialty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateDiseaseHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateDiseaseHistoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernatePetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernatePetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/PetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/person-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/person-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sign-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sign-up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/doctor-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/doctor-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/doctor-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sign-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sign-in.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,114 +41,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HibernatePetRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernatePetRepository.java">
+      <file leaf-file-name="sign-up.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sign-up.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="-78">
+              <caret line="162" column="81" selection-start-line="162" selection-start-column="81" selection-end-line="162" selection-end-column="81" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HibernateRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#586#587#0" expanded="true" />
-                <element signature="e#651#652#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PetRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/PetRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/ClientService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultClientService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultClientService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultDoctorService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultDoctorService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultPetService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultPetService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultVisitService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultVisitService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DoctorService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DoctorService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Doctor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Doctor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Doctor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="175">
+              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="doctor-page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/doctor-page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="841">
+              <caret line="226" lean-forward="true" selection-start-line="189" selection-end-line="226" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#a#0;n#div#1;n#div#7;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#1;n#div#10;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/footer.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-357" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/ClientController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="41" column="38" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1388#1389#0" expanded="true" />
+                <element signature="e#1412#1413#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pet-page.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/pet-page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="87" column="19" lean-forward="true" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="person-page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/person-page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-995">
+              <caret line="108" column="81" selection-start-line="108" selection-start-column="81" selection-end-line="108" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -177,17 +147,14 @@
       <list>
         <option value="JavaScript File" />
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Pets by client</find>
-      <find>margin</find>
-      <find>addPetID</find>
       <find>add</find>
       <find>jquery</find>
       <find>JetbrainsCrack</find>
@@ -215,6 +182,9 @@
       <find>person</find>
       <find>erson</find>
       <find>th</find>
+      <find>лич</find>
+      <find>pet-form-by-Id</find>
+      <find>viewInfByID</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -230,10 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/config/MvcConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/sign-in.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/back.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/about.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spy.properties" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/ClientPet.java" />
@@ -248,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/ClientRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateClientRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/index.js" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/database/DefaultVisitService.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/DiseaseHistoryRepository.java" />
@@ -267,11 +232,8 @@
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateDoctorInfoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DoctorService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/ClientController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernateDoctorRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/doctor-page.html" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/DiseaseHistory.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/PetGender.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Specialty.java" />
@@ -281,6 +243,14 @@
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/HibernatePetRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/repository/PetRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/DefaultDoctorService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/succses-reg.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/sign-in.html" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/success-reg.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.js" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/ClientController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/doctor-page.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/pet-page.html" />
       </list>
     </option>
   </component>
@@ -609,6 +579,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PetClinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PetClinic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PetClinic" type="b2602c69:ProjectViewProjectNode" />
@@ -946,7 +924,7 @@
       <workItem from="1557868030037" duration="4235000" />
       <workItem from="1557901846950" duration="3376000" />
       <workItem from="1557919390093" duration="4182000" />
-      <workItem from="1558036829190" duration="21448000" />
+      <workItem from="1558036829190" duration="34250000" />
     </task>
     <task id="LOCAL-00001" summary="Init.">
       <created>1557230479191</created>
@@ -983,11 +961,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557904050367</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Connected class Doctor with Database, registration for Doctors, reedit html files, fixed small bags.">
+      <created>1558063875582</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558063875582</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184252000" />
+    <option name="totallyTimeSpent" value="197054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1008,27 +993,27 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info anchor="right" id="Database" order="5" weight="0.16577181" />
+      <window_info anchor="right" id="Database" order="7" weight="0.16577181" />
       <window_info id="Structure" order="1" sideWeight="0.50106156" side_tool="true" weight="0.2966443" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7704698" weight="0.47740114" />
       <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49798658" weight="0.32909605" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4966443" weight="0.32485875" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" sideWeight="0.49932885" weight="0.32905984" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49798658" weight="0.32768363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85302013" visible="true" weight="0.30084747" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.85302013" visible="true" weight="0.3940678" />
       <window_info anchor="bottom" id="Spring" order="14" sideWeight="0.4986577" weight="0.21082622" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49731544" weight="0.32905984" />
       <window_info id="Persistence" order="7" sideWeight="0.50236964" side_tool="true" weight="0.2966443" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.19194631" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49763033" visible="true" weight="0.19194631" />
       <window_info anchor="right" id="Bean Validation" order="8" weight="0.3295302" />
       <window_info anchor="bottom" id="Web" order="6" sideWeight="0.14697987" side_tool="true" weight="0.30084747" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32768363" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1111,7 +1096,8 @@
     <MESSAGE value="Upgrade and Complete spring secure (Authentication). Upgrade Front-End." />
     <MESSAGE value="Work with Hibernate and add new table. Work with Doctor, but now commit." />
     <MESSAGE value="Connected class Doctor with Database, registration for Doctors, reedit html files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Connected class Doctor with Database, registration for Doctors, reedit html files." />
+    <MESSAGE value="Connected class Doctor with Database, registration for Doctors, reedit html files, fixed small bags." />
+    <option name="LAST_COMMIT_MESSAGE" value="Connected class Doctor with Database, registration for Doctors, reedit html files, fixed small bags." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1126,81 +1112,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JavaScript-modules-diagram/D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/about.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/card.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/footer.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/header.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/login.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/person-page.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/sign-in.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/sign-up.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/template.html;">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$/src/main/resources/templates/about.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/card.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/footer.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/header.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/login.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/person-page.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/sign-in.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/sign-up.html;D:/Самообучение/gitHub/PetClinic/src/main/resources/templates/template.html;</OriginalElement>
-          <nodes>
-            <node x="" y="">$PROJECT_DIR$/src/main/resources/templates/about.html</node>
-            <node x="" y="">$PROJECT_DIR$/src/main/resources/templates/card.html</node>
-            <node x="" y="">$PROJECT_DIR$/src/main/resources/templates/footer.html</node>
-            <node x="" y="">$PROJECT_DIR$/src/main/resources/templates/header.html</node>
-            <node x="" y="">$PROJECT_DIR$/src/main/resources/templates/login.html</node>
-            <node x="" y="">$PROJECT_DIR$/src/main/resources/templates/person-page.html</node>
-            <node x="" y="">/back.css</node>
-            <node x="" y="">/index.js</node>
-            <node x="" y="">http://pngimg.com/uploads/cat/cat_PNG50539.png</node>
-            <node x="" y="">http://s1.1zoom.me/big0/281/428600-Kycb.jpg</node>
-            <node x="" y="">https://4.bp.blogspot.com/-bfQCM85pM2s/VEqa6Mno71I/AAAAAAAAAyw/irwbo6CoHH8/s1600/shutterstock_222493828_girldogpark.jpg</node>
-            <node x="" y="">https://99px.ru/sstorage/53/2016/10/tmb_179972_3349.jpg</node>
-            <node x="" y="">https://99px.ru/sstorage/53/2016/10/tmb_179973_5182.jpg</node>
-            <node x="" y="">https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js</node>
-            <node x="" y="">https://bugaga.ru/uploads/posts/2016-12/1481636722_deti-i-sobaki-8.jpg</node>
-            <node x="" y="">https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js</node>
-            <node x="" y="">https://i.imgur.com/n1oT1dC.png</node>
-            <node x="" y="">https://i.pinimg.com/originals/2d/0f/79/2d0f796f4655baeca812ed1b7af9abf7.jpg</node>
-            <node x="" y="">https://image.flaticon.com/icons/svg/1642/1642899.svg</node>
-            <node x="" y="">https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css</node>
-            <node x="" y="">https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js</node>
-            <node x="" y="">https://stickeroid.com/uploads/pic/full/thumb/stickeroid_5bf57dcb2870c.png</node>
-            <node x="" y="">https://www.firestock.ru/wp-content/uploads/2017/02/148498731258831bb0b3e609.89239720-700x437.jpg</node>
-            <node x="" y="">https://www.searchpng.com/wp-content/uploads/2018/12/Dog-PNG-Image-715x715.png</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="496.0" y="703.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>Overview</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/service/VisitService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-orm/5.0.9.RELEASE/spring-orm-5.0.9.RELEASE.jar!/org/springframework/orm/hibernate5/LocalSessionFactoryBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="330" selection-start-line="330" selection-end-line="330" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/test.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/text.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1228,13 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/card.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1249,27 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/person-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2873">
-          <caret line="222" column="44" lean-forward="true" selection-start-line="222" selection-start-column="44" selection-end-line="222" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sign-up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="162" column="81" selection-start-line="162" selection-start-column="81" selection-end-line="162" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sign-in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="149" column="36" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1281,13 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/doctor-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="208" column="40" selection-start-line="208" selection-start-column="40" selection-end-line="208" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1308,16 +1184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/ClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/DatabaseController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -1332,16 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1567,13 +1423,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="65" column="46" lean-forward="true" selection-start-line="65" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sign-in.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/success-reg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/model/Doctor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        <state relative-caret-position="175">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sign-up.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="162" column="81" selection-start-line="162" selection-start-column="81" selection-end-line="162" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/person-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-995">
+          <caret line="108" column="81" selection-start-line="108" selection-start-column="81" selection-end-line="108" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/doctor-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="226" lean-forward="true" selection-start-line="189" selection-end-line="226" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#a#0;n#div#1;n#div#7;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#1;n#div#10;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/footer.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bntu/fitr/povt/controller/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1388#1389#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/pet-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="87" column="19" lean-forward="true" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
         </state>
       </provider>
     </entry>

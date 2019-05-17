@@ -38,8 +38,15 @@ public class ClientController {
         return auth.getName();
     }
 
+    // TODO: 5/17/2019 Hardcode, replace in future
+    @GetMapping("/show-pet-information")
+    public String showPetInformation(){
+        return "pet-page";
+    }
 
-
+//    @PostMapping("/show-information-by-Id")
+//    public String ShowInformationById(@RequestParam(name = "") )
+//
     @GetMapping("/person-page")
     public String PersonPage(Model model) {
         log.info(getCurrentUsername());
