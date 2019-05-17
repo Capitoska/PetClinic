@@ -24,14 +24,14 @@ public class DatabaseController {
                @RequestParam String newSecondName,
                @RequestParam String newUsername,
                @RequestParam String newPassword,
-               @RequestParam Integer newPhoneNumber
+               @RequestParam String newPhoneNumber
     ) {
         Client client = new Client();
         client.setUsername(newUsername);
         client.setFirstName(newFirstName);
         client.setSecondName(newSecondName);
         client.setPassword(newPassword);
-        client.setPhoneNumber(newPhoneNumber);
+        client.setPhoneNumber(Long.parseLong(newPhoneNumber));
         clientService.createClient(client);
         return "Saved";
     }

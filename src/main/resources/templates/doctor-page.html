@@ -54,7 +54,7 @@
                 </div>
                 <div class="modal-body">
 
-                <div class="form-group">
+                    <div class="form-group">
                         <div class="input-group">
                             <input type="text" class="form-control" name="name" placeholder="Имя" id="PetName">
                         </div>
@@ -85,7 +85,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить
+                    <button type="submit" id="add-pet-button" name="add-pet-button"
+                            class="btn btn-success my-2 my-lg-0">Добавить
                     </button>
                 </div>
             </form>
@@ -116,12 +117,13 @@
                 </div>
 
                 <!--<div class="modal-footer">-->
-                    <!--<button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить-->
-                    <!--</button>-->
+                <!--<button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить-->
+                <!--</button>-->
                 <!--</div>-->
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="add-pet-button by " name="add-pet-button-id">Добавить
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="add-pet-button by "
+                            name="add-pet-button-id">Добавить
                     </button>
                 </div>
             </form>
@@ -214,9 +216,14 @@
                     <div class="form-group">
                         <!--<label for="exampleFormControlSelect1">Example select</label>-->
                         <select name="selectType" class="form-control" id="TypeOfDoctor" placeholder="Доктор">
-                            <option th:each="specialty,iter : ${specialtyList}"
-                                    th:value="${specialty.name()}"
-                                    th:text="${specialty.getDisplayName()}"></option>
+                            <option>Терапевт</option>
+                            <option>Хирург</option>
+                            <option>Офтальмолог</option>
+                            <option>Дерматолог</option>
+                            <option>Кардиолог</option>
+                            <option>Стоматолог</option>
+                            <option>Гинеколог</option>
+                            <option>Профилактолог</option>
                         </select>
                     </div>
 
@@ -255,7 +262,7 @@
 <div>
     <header class="page-header">
         </br>
-        <h1 class="page-title" align="center">Личная страница</h1>
+        <h1 class="page-title" align="center">Личная страница доктора</h1>
     </header>
 </div>
 
@@ -284,7 +291,7 @@
     </div>
 </div>
 
-<h2 align="center">Ваши животные</h2>
+<h2 align="center">Ваши пациенты</h2>
 </br>
 <div class="row" align="center">
     <div class="col-md-3"></div>
@@ -295,8 +302,12 @@
         <button type="button" class="btn2 btn-dark add" data-target="#addPetById" style="margin-right: 5px"
                 data-toggle="modal">Добавить по ID
         </button>
-        <button type="button" style="margin-right: 5px" class="btn2 btn-dark del" data-target="#deletePetID" data-toggle="modal">Удалить</button>
-        <button type="button" style="margin-right: 5px" class="btn2 btn-dark rec" data-target="#goToDoctor" data-toggle="modal" >Запись на прием</button>
+        <button type="button" style="margin-right: 5px" class="btn2 btn-dark del" data-target="#deletePetID"
+                data-toggle="modal">Удалить
+        </button>
+        <button type="button" style="margin-right: 5px" class="btn2 btn-dark rec" data-target="#goToDoctor"
+                data-toggle="modal">Запись на прием
+        </button>
     </div>
 </div>
 </br>

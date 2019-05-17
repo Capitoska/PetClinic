@@ -3,15 +3,19 @@ package by.bntu.fitr.povt.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-//@Entity
+@Entity
+@Table(name = "clients")
 public class Doctor extends User {
-    private int idCard;
-    private int voteAmount;
-    private int sumVote;
-    private double result;
-    private Specialty specialty;
+    @Column(name = "doctor_cards", nullable = false)
+    private String idCard;
+    @OneToOne
+    @JoinTable(
+            name = "doctor_info",
+            joinColumns = @JoinColumn(name = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id"))
+    DoctorInfo doctorInfo;
 }

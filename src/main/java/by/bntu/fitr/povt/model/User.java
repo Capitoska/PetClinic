@@ -20,10 +20,11 @@ public class User {
     @Column(name = "second_name", nullable = false)
     private String secondName;
     @Column(name = "phone_number", nullable = false)
-    private Integer phoneNumber;
+    private Long phoneNumber;
     @Column(nullable = false)
     private String password;
-
-
+    @Column(name = "role", nullable = false)
+    @Enumerated(EnumType.ORDINAL)
+    private Role role;
 
  }

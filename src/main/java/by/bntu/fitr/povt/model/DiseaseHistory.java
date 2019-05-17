@@ -11,27 +11,26 @@ import java.util.Date;
 //@Entity
 
 //@Builder@Table(name = "disease_histories")
-public class DiseaseHistory
-{
-//    @Id
+public class DiseaseHistory {
+    //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(nullable = false)
     private String id;
 
-//    @Column(name = "date_visit",nullable = false)
+    //    @Column(name = "date_visit",nullable = false)
     private LocalDate date;
-//    @Column(name = "date_answer",nullable = false)
+    //    @Column(name = "date_answer",nullable = false)
     private LocalDate answerDate;
-//    @OneToOne
+    //    @OneToOne
 //    @Column(name = "pet_id",nullable = false)
     private Pet pet;
-//    @OneToOne
+    //    @OneToOne
 //    @Column(name = "sender_id",nullable = false)
     private Client client;
-//    @Column(name = "doctor_id",nullable = false)
+    //    @Column(name = "doctor_id",nullable = false)
     private Doctor doctor;
-//    @Column(name = "description",nullable = false)
+    //    @Column(name = "description",nullable = false)
     private String description;
-//    @Column(name = "answer",nullable = false)
+    //    @Column(name = "answer",nullable = false)
     private String answer;
 }

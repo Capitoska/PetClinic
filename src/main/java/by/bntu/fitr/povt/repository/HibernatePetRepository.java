@@ -10,10 +10,10 @@ public class HibernatePetRepository extends HibernateRepository<Pet> implements 
 
     @Override
     public Pet findByIdPet(Integer id) {
-       Session session = sessionFactory.getCurrentSession();
-       Query query = session.createQuery("from Pet where id = :id");
-       query.setParameter("id", id);
-       return (Pet) query.uniqueResult();
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Pet where id = :id");
+        query.setParameter("id", id);
+        return (Pet) query.uniqueResult();
     }
 
     @Override
