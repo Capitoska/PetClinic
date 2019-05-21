@@ -1,6 +1,7 @@
 package by.bntu.fitr.povt.repository;
 
 import by.bntu.fitr.povt.model.Client;
+import by.bntu.fitr.povt.model.Pet;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
@@ -9,12 +10,6 @@ import java.util.List;
 
 @Repository
 public class HibernateClientRepository extends HibernateRepository<Client> implements ClientRepository {
-//
-//    public List<T> findAll(Class<T> clazz) {
-//        return sessionFactory.getCurrentSession()
-//                .createQuery("from " + clazz.getSimpleName())
-//                .list();
-//    }
 
     @SuppressWarnings("unchecked")
     @Override
@@ -38,6 +33,15 @@ public class HibernateClientRepository extends HibernateRepository<Client> imple
     }
 
     @Override
+    public void deletePetFromClient(Client client, Pet pet) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("delete from ClientPet where pet=:pet and client=:client");
+        query.setParameter("pet",pet);
+        query.setParameter("client",client);
+        int result = query.executeUpdate();
+    }
+
+    @Override
     public Client findByUsername(String name) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Client " +
@@ -47,7 +51,6 @@ public class HibernateClientRepository extends HibernateRepository<Client> imple
         return (Client) query.uniqueResult();
     }
 
-    @Override
     public List<Client> findAll() {
         return this.findAll(Client.class);
     }

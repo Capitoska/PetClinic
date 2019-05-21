@@ -1,36 +1,58 @@
 package by.bntu.fitr.povt.model;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
-//@Entity
-
-//@Builder@Table(name = "disease_histories")
+@Entity
+@Table(name = "disease_histories")
+@AllArgsConstructor
 public class DiseaseHistory {
-    //    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(nullable = false)
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private Integer id;
 
-    //    @Column(name = "date_visit",nullable = false)
+    @Column(name = "date_visit", nullable = false)
     private LocalDate date;
-    //    @Column(name = "date_answer",nullable = false)
+    @Column(name = "date_answer", nullable = false)
     private LocalDate answerDate;
-    //    @OneToOne
-//    @Column(name = "pet_id",nullable = false)
+    @OneToOne
+    @JoinColumn(name = "pet_id")
     private Pet pet;
-    //    @OneToOne
-//    @Column(name = "sender_id",nullable = false)
+    @OneToOne
+    @JoinColumn(name = "sender_id")
     private Client client;
-    //    @Column(name = "doctor_id",nullable = false)
-    private Doctor doctor;
-    //    @Column(name = "description",nullable = false)
+    @OneToOne
+    @JoinColumn(name = "doctor_id")
+    private Client doctor;
+    @Column(name = "description", nullable = false)
     private String description;
-    //    @Column(name = "answer",nullable = false)
+    @Column(name = "answer", nullable = false)
     private String answer;
+
+    @Column(name = "doctor_type")
+    private Specialty doctorType;
+
+    @Override
+    public String toString() {
+        return "DiseaseHistory{" +
+                "id=" + id +
+                ", date=" + date +
+                ", answerDate=" + answerDate +
+                ", pet=" + pet +
+                ", client=" + client +
+                ", doctor=" + doctor +
+                ", description='" + description + '\'' +
+                ", answer='" + answer + '\'' +
+                ", doctorType=" + doctorType +
+                '}';
+    }
+
+    public DiseaseHistory() {
+    }
+
 }

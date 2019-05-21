@@ -3,7 +3,6 @@ package by.bntu.fitr.povt.service;
 import by.bntu.fitr.povt.model.Client;
 import by.bntu.fitr.povt.model.Pet;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public interface ClientService {

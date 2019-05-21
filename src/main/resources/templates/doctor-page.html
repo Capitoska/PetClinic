@@ -10,8 +10,8 @@
 
         .btn2 {
             background: #352A3B;
-            width: 300px;
-            height: 80px;
+            width: 200px;
+            height: 60px;
             border-radius: 10px;
         }
 
@@ -48,12 +48,8 @@
                 </button>
 
             </div>
-            <form id="pet-form" action="/user/addPet" method="post">
-                <div id="pet-form-alert" class="alert alert-danger d-none" role="alert">
-                    Вы ввели неправильные данные
-                </div>
+            <form id="get-inform" name="get-inform" action="/user/show-pet-information" method="post">
                 <div class="modal-body">
-
                     <div class="form-group">
                         <div class="input-group">
                             <input type="text" class="form-control" name="name" placeholder="Введите ID" id="PetName">
@@ -61,8 +57,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" id="add-pet-button" name="view-pet-button"
-                            class="btn btn-success my-2 my-lg-0" >Просмотерть
+
+                    <button type="submit" id="view-pet-button" name="view-pet-button"
+                            class="btn btn-success my-2 my-lg-0">Просмотерть
                     </button>
                 </div>
             </form>
@@ -92,10 +89,6 @@
                     </div>
                 </div>
 
-                <!--<div class="modal-footer">-->
-                <!--<button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить-->
-                <!--</button>-->
-                <!--</div>-->
 
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success my-2 my-lg-0" id="add-pet-button by "
@@ -137,7 +130,6 @@
 </div>
 
 
-
 <div>
     <header class="page-header">
         </br>
@@ -152,7 +144,8 @@
     <div class="col-md-3">
         <figure>
             <img class="rounded-circle" alt=""
-                 src="https://img1.akspic.ru/image/14415-uslugi_dizajn_interera-atmosfera-tekstura-kosmos-granzh_steny-1920x1080.jpg?attachment=1" width="300"
+                 src="https://img1.akspic.ru/image/14415-uslugi_dizajn_interera-atmosfera-tekstura-kosmos-granzh_steny-1920x1080.jpg?attachment=1"
+                 width="300"
                  height="300">
         </figure>
     </div>
@@ -164,6 +157,8 @@
         </li>
         <li class="list-group-item list-group-item-mine" id="NickName"><p th:text="${nickname}" style="margin: 0px"/>
         </li>
+        <li class="list-group-item list-group-item-mine" id="Specialty"><p th:text="${specialty}" style="margin: 0px"/>
+        </li>
         <li class="list-group-item list-group-item-mine" id="phone"><i class="fa fa-phone"></i>
             <p th:text="${phone}" style="margin: 0px"/></li>
         </ul>
@@ -174,56 +169,140 @@
 </br>
 <div class="row" align="center">
     <div class="col-md-4"></div>
-    <div class="btn-group-horizontal">
-        <a href="/user/show-pet-information">
-            <button type="button" class="btn2 btn-dark add" data-target="#viewInfByID"  style="margin-right: 5px; border: 0px"
-                    data-toggle="modal">Просмотр информации по ID
-            </button>
-        </a>
-        <button type="button" class="btn2 btn-dark add" data-target="#addSymptom" style="margin-right: 5px"
-                data-toggle="modal">Написать диагноз
-        </button>
-
-    </div>
 </div>
 </br>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-11">
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th>№</th>
                 <th>Id</th>
+                <th>Date</th>
                 <th>Name</th>
                 <th>Type</th>
                 <th>Data</th>
+                <th style="border-right: hidden; border-top: hidden; border-bottom: hidden ">
             </tr>
             </thead>
 
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>32</td>
-                <td>Грейси</td>
-                <td>Кот</td>
-                <td>17.05.2019</td>
-            </tr>
-            <th:block th:each="pet,iter : ${pets}">
+            <!--<tr>-->
+            <!--<th scope="row">1</th>-->
+            <!--<td>32</td>-->
+            <!--<td>17.05.2019</td>-->
+            <!--<td>Грейси</td>-->
+            <!--<td>Кот</td>-->
+            <!--<td>Всё болит</td>-->
+            <!--<td style="width: 450px; border-right: hidden; border-top: hidden; border-bottom: hidden ">-->
+            <!--<div>-->
+            <!--<button type="button" class="btn2 btn-dark add" data-target="#addSymptom"-->
+            <!--style="margin-right: 5px"-->
+            <!--data-toggle="modal">Медкарта-->
+            <!--</button>-->
+            <!--<button type="button" class="btn2 btn-dark add" data-target="#addSymptom"-->
+            <!--style="margin-right: 5px"-->
+            <!--data-toggle="modal">Написать диагноз-->
+            <!--</button>-->
+            <!--</div>-->
+            <!--</td>-->
+            <!--</tr>-->
+            <th:block th:each="diseaseHistory,iter : ${diseaseHistories}">
                 <tr>
                     <td th:text="${iter.index} + 1"></td>
-                    <td th:text="${pet.getId()}"></td>
-                    <td th:text="${pet.getName()}"></td>
-                    <td th:text="${pet.getType()}"></td>
-                    <td th:text="${pet.getAge()}"></td>
-                    <td th:text="${pet.getGender()}"></td>
+                    <td th:text="${diseaseHistory.getId()}"></td>
+                    <td th:text="${diseaseHistory.getDate().toString()}"></td>
+                    <td th:text="${diseaseHistory.getPet().getName()}"></td>
+                    <td th:text="${diseaseHistory.getPet().getType()}"></td>
+                    <td th:text="${diseaseHistory.getDescription()}"></td>
+
+                    <td style="width: 450px; border-right: hidden; border-top: hidden; border-bottom: hidden ">
+                        <div class="row">
+                            <div>
+                                <a th:href="${'/doctor/pet/' + diseaseHistory.getPet().getId()}" ><button class="btn2 btn-dark add" style="margin-left: 7px">Медкарта</button></a>
+                            </div>
+
+                            <div>
+                                <a th:id="${diseaseHistory.getId()}" class="diagnos-add"><button class="btn2 btn-dark add">Поставить
+                                    диагноз</button></a>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             </th:block>
             </tbody>
         </table>
     </div>
-
 </div>
+
+
+<!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">-->
+<!--Запустить модальное окно-->
+<!--</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="addDiagnoses" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form id="add-diagnoses-form">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" name="diagnoses" placeholder="Ваш диагноз" id="diagnoses">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    <button type="submit" id="add-diagnoses" class="btn btn-primary">Save changes</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="note" id="Success1">
+    <div class="modal-dialog modal-dialog-centered" role="note">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Диагноз отправлен</h5>
+                <button type="button" id="modal-close-button1" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<th:block th:each="diseaseHistory,iter : ${diseaseHistories}">-->
+<!--<tr>-->
+<!--<td th:text="${iter.index} + 1"></td>-->
+<!--<td th:text="${diseaseHistory.getId()}"></td>-->
+<!--<td th:text="${diseaseHistory.getDate().toString()}"></td>-->
+<!--<td th:text="${diseaseHistory.getPet().getName()}"></td>-->
+<!--<td th:text="${diseaseHistory.getPet().getType()}"></td>-->
+<!--<td th:text="${diseaseHistory.getDescription()}"></td>-->
+
+<!--<td style="width: 450px; border-right: hidden; border-top: hidden; border-bottom: hidden ">-->
+<!--<div>-->
+<!--<button type="button" class="btn2 btn-dark add" data-target="#addSymptom"-->
+<!--style="margin-right: 5px"-->
+<!--data-toggle="modal">Медкарта-->
+<!--</button>-->
+<!--<button type="button" class="btn2 btn-dark add" data-target="#addSymptom"-->
+<!--style="margin-right: 5px"-->
+<!--data-toggle="modal">Написать диагноз-->
+<!--</button>-->
+<!--</div>-->
+<!--</td>-->
+<!--</tr>-->
+<!--</th:block>-->
 
 <div th:replace="footer :: footer"></div>
 </body>

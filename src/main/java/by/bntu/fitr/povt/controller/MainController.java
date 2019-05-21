@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
 
@@ -34,11 +33,7 @@ public class MainController {
     }
 
 
-    @GetMapping("/greeting") // Когда мы обращаемся по этому адресу
-    public String greeting2(@RequestParam(name = "name", required = false, defaultValue = "12333") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting"; // Выводит такая страничка
-    }
+
 
     @GetMapping("/best-doctors")
     public String bestDoctors() {
@@ -58,7 +53,7 @@ public class MainController {
 
     @GetMapping("/sign-up")
     public String signUp(
-            @RequestParam(name = "doctor", required = false) String doctor,
+            @RequestParam(name = "client", required = false) String doctor,
             @RequestParam(name = "owner", required = false) String owner,
             Model model) {
 
@@ -99,20 +94,20 @@ public class MainController {
                                @RequestParam(name = "specialty", defaultValue = "") String newspecialty,
                                @RequestParam(name = "idcard", defaultValue = "") String newidcard,
                                Model model) {
-        log.info("Doctor registration!!!");
-        Doctor doctor = new Doctor();
-        doctor.setFirstName(newfirstName);
-        doctor.setSecondName(newsecondName);
-        doctor.setUsername(newnickname);
-        doctor.setPhoneNumber(Long.parseLong(newtelephone));
-        doctor.setPassword(newpassword);
+        log.info("Client registration!!!");
+        Client client = new Client();
+        client.setFirstName(newfirstName);
+        client.setSecondName(newsecondName);
+        client.setUsername(newnickname);
+        client.setPhoneNumber(Long.parseLong(newtelephone));
+        client.setPassword(newpassword);
         DoctorInfo doctorInfo = new DoctorInfo();
-        doctor.setDoctorInfo(doctorInfo);
-        doctor.getDoctorInfo().setSpecialty(Specialty.valueOf(newspecialty));
-        doctor.setIdCard(newidcard);
-        doctor.setRole(Role.DOCTOR);
+        client.setDoctorInfo(doctorInfo);
+        client.getDoctorInfo().setSpecialty(Specialty.valueOf(newspecialty));
+        client.setIdCard(newidcard);
+        client.setRole(Role.DOCTOR);
         log.info("All good");
-        doctorService.createDoctor(doctor, doctorInfo);
+        doctorService.createDoctor(client, doctorInfo);
         return "success-reg";
     }
 }

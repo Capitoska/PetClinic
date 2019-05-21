@@ -170,19 +170,18 @@
                 </button>
 
             </div>
-            <form action="/login" method="get">
+            <form action="/user/delPetById" method="post" name="del-pet-by-id-form", id = "del-pet-by-id-form">
                 <div class="modal-body">
 
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="ID">
+                            <input type="text" class="form-control" name="id-pet"placeholder="ID">
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success my-2 my-lg-0" data-target="#SuccessDelete"
-                            data-toggle="modal" data-dismiss="modal">Удалить
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="del-pet-button-id" name="del-pet-button-id">Удалить
                     </button>
                 </div>
             </form>
@@ -203,17 +202,17 @@
                 </button>
             </div>
 
-            <form action="/user/addPet" method="get">
+            <form action="/user/addAnAppointment" id="go-to-doctor-form" name="go-to-doctor-form" method="post">
                 <div class="modal-body">
 
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="ID животного" id="IDPet">
+                            <input type="text" class="form-control" name="IDPet" placeholder="ID животного" id="IDPet">
                         </div>
                     </div>
                     <div class="form-group">
                         <!--<label for="exampleFormControlSelect1">Example select</label>-->
-                        <select name="selectType" class="form-control" id="TypeOfDoctor" placeholder="Доктор">
+                        <select class="form-control" id="TypeOfDoctor" name="typeOfDoctor" placeholder="Доктор">
                             <option th:each="specialty,iter : ${specialtyList}"
                                     th:value="${specialty.name()}"
                                     th:text="${specialty.getDisplayName()}"></option>
@@ -225,13 +224,12 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" name="gender" type="text" placeholder="Что случилось?" id="Ill">
+                        <input class="form-control" name="description" id = "description" type="text" placeholder="Что случилось?">
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" name="addAllPet" class="btn btn-success my-2 my-lg-0" data-toggle="modal"
-                            data-target="#SuccessWrite" data-dismiss="modal">Записать
+                    <button type="submit" name="Appoirtment" id="Appoirtment" class="btn btn-success my-2 my-lg-0" >Записать
                     </button>
                 </div>
             </form>

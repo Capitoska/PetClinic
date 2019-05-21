@@ -1,8 +1,10 @@
 package by.bntu.fitr.povt.service;
 
+import by.bntu.fitr.povt.model.DiseaseHistory;
 import by.bntu.fitr.povt.model.Pet;
 import by.bntu.fitr.povt.repository.ClientRepository;
 import by.bntu.fitr.povt.repository.PetRepository;
+import by.bntu.fitr.povt.repository.Repository;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

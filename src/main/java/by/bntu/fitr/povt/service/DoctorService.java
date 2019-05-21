@@ -1,10 +1,15 @@
 package by.bntu.fitr.povt.service;
 
-import by.bntu.fitr.povt.model.Doctor;
+import by.bntu.fitr.povt.model.Client;
+import by.bntu.fitr.povt.model.DiseaseHistory;
 import by.bntu.fitr.povt.model.DoctorInfo;
+import by.bntu.fitr.povt.model.Specialty;
+
+import java.util.List;
 
 public interface DoctorService {
-    Doctor getDoctorByUsername(String username);
-    void createDoctor(Doctor doctor, DoctorInfo doctorInfo);
-    void updateDoctor(Doctor doctor, DoctorInfo doctorInfo);
+    Client getDoctorByUsername(String username);
+    List<DiseaseHistory> getAllDiseaseBySpecialty(Specialty specialty);
+    void createDoctor(Client client, DoctorInfo doctorInfo);
+    void updateDoctor(Client client, DoctorInfo doctorInfo);
 }

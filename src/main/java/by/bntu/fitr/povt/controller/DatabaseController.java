@@ -17,7 +17,6 @@ public class DatabaseController {
     @Setter(onMethod_ = @Autowired)
     private ClientService clientService;
 
-    //http://localhost:8080/data/add?newFirstName=test&newSecondName=test2&newHandle=345
     @GetMapping("/add")
     public @ResponseBody
     String add(@RequestParam String newFirstName,

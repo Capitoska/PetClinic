@@ -3,12 +3,14 @@ package by.bntu.fitr.povt.service;
 import by.bntu.fitr.povt.model.Client;
 import by.bntu.fitr.povt.model.Pet;
 import by.bntu.fitr.povt.repository.ClientRepository;
+import by.bntu.fitr.povt.repository.PetRepository;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
@@ -18,10 +20,14 @@ public class DefaultClientService implements ClientService {
     @Setter(onMethod_ = @Autowired)
     private ClientRepository clientRepository;
 
-    // TODO: 5/17/2019 Сделать удаление питомца по ID
+    @Setter(onMethod_ = @Autowired)
+    private PetRepository petRepository;
+
     @Override
+    @Transactional
     public void removePetById(Client client, Integer idPet) {
-//        client.getPets().remove()
+        clientRepository.deletePetFromClient(client,petRepository.findByIdPet(idPet));
+        clientRepository.update(client);
     }
 
     @Override
@@ -45,7 +51,7 @@ public class DefaultClientService implements ClientService {
     @Override
     @Transactional(readOnly = true)
     public List<Client> getAll() {
-        return clientRepository.findAll();
+        return clientRepository.findAll(Client.class);
     }
 
     @Override

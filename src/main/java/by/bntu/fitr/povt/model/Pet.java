@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -25,7 +26,8 @@ public class Pet {
     @Column(name = "age",nullable = false)
     private Integer age;
 
-//    @OneToMany
-//    private List<DiseaseHistory> medicalCard;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "pet_id")
+    private List<DiseaseHistory> medicalCard;
 
 }

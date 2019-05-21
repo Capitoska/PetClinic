@@ -155,8 +155,6 @@
                     <i class="fa fa-credit-card"></i>
                 </div>
                 <div th:if="${isDoctor}" class = "form-group">
-                    <!--<input class="form-control" id="specialty" name="specialty" type="text" placeholder="Специальность"/>-->
-                    <!--<i class="fa fa-credit-card"></i>-->
                     <select name="specialty" class="form-control" id="specialty" placeholder="Ваша специальность">
                         <option th:each="specialty,iter : ${specialtyList}"
                                 th:value="${specialty.name()}"

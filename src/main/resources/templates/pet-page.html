@@ -55,10 +55,12 @@
     <div class="col-md-7">
         <br class="list-group" style="height: 300px">
         </br>
-        <li class="list-group-item list-group-item-mine" id="name">Грейси</li>
-        <li class="list-group-item list-group-item-mine" id="surname">Кот
+        <li class="list-group-item list-group-item-mine" id="name"><td th:text="${pet.getName()}"></td></li>
+        <li class="list-group-item list-group-item-mine" id="type"><td th:text="${pet.getType()}"></td>
         </li>
-        <li class="list-group-item list-group-item-mine" id="NickName">Кот
+        <li class="list-group-item list-group-item-mine" id="age"><td th:text="${pet.getAge()}"></td>
+        </li>
+        <li class="list-group-item list-group-item-mine" id="gender"><td th:text="${pet.getGender()}"></td>
         </li>
 
     </div>
@@ -78,20 +80,32 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>№</th>
+                <th>#</th>
+                <th>Id DH</th>
                 <th>Date</th>
+                <th>Client</th>
                 <th>Symptom</th>
-                <th>Writer</th>
+                <th>Doctor</th>
+                <th>Diagnose date</th>
+                <th>Specialty</th>
+                <th>Diagnosis</th>
             </tr>
             </thead>
 
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>17.05.2019</td>
-                <td>Насморк </td>
-                <td>Даша Косякова(kosya_kosia)</td>
-            </tr>
+            <th:block th:each="diseaseHistory,iter : ${pet.getMedicalCard()}">
+                <tr>
+                    <td th:text="${iter.index} + 1"></td>
+                    <td th:text="${diseaseHistory.getId()}"></td>
+                    <td th:text="${diseaseHistory.getDate().toString()}"></td>
+                    <td th:text="${diseaseHistory.getClient().getUsername()}"></td>
+                    <td th:text="${diseaseHistory.getDescription()}"></td>
+                    <td th:text="${diseaseHistory.getDoctor() == null ? 'нет доктора' : diseaseHistory.getDoctor().getUsername()}"></td>
+                    <td th:text="${diseaseHistory.getAnswerDate()}"></td>
+                    <td th:text="${diseaseHistory.getDoctorType()}"></td>
+                    <td th:text="${diseaseHistory.getAnswer()}"></td>
+                </tr>
+            </th:block>
             </tbody>
         </table>
     </div>
