@@ -37,7 +37,7 @@ $(document).on('submit', '#del-pet-by-id-form', function (event) {
         data: formData,
         success: function () {
             $('#deletePetID').modal('hide');
-            $('#Success').modal('show');
+            $('#SuccessDelete').modal('show');
         }
     });
     return true;
@@ -51,7 +51,7 @@ $(document).on('submit', '#go-to-doctor-form', function (event) {
         data: formData,
         success: function () {
             $('#goToDoctor').modal('hide');
-            $('#Success').modal('show');
+            $('#SuccessWrite').modal('show');
         }
     });
     return true;
@@ -80,22 +80,21 @@ $('.diagnos-add').click(function () {
     modalForm.modal('show');
     return false;
 });
-// $(document).on('submit', '#pet-form-by-Id', function (event){
-// event.preventDefault();
-// var formData = $('#pet-form-by-Id').serialize();
-// $.post({
-//     url: '/user/addPetById',
-//     data: formData,
-//     success: function(){
-//         $('#addPetById').modal('hide');
-//         $('#Success').modal('show');
-//     }
-// });
-// return true;
-// });
+
 
 $('#modal-close-button').click(function () {
     location.reload()
 });
+
+$('#modal-close-button-write').click(function () {
+    location.reload()
+});
+
+
+$('#modal-close-button-delete').click(function () {
+    location.reload()
+});
+
+
 
 

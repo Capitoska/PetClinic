@@ -33,8 +33,6 @@ public class MainController {
     }
 
 
-
-
     @GetMapping("/best-doctors")
     public String bestDoctors() {
         return "card";
@@ -53,7 +51,7 @@ public class MainController {
 
     @GetMapping("/sign-up")
     public String signUp(
-            @RequestParam(name = "client", required = false) String doctor,
+            @RequestParam(name = "doctor", required = false) String doctor,
             @RequestParam(name = "owner", required = false) String owner,
             Model model) {
 
@@ -63,14 +61,15 @@ public class MainController {
         model.addAttribute("specialtyList", Arrays.asList(Specialty.values()));
         return "sign-up";
     }
- // Стояло ResponseBody ....
+
+    // Стояло ResponseBody ....
     @PostMapping("/reg-owner")
     public String registration(@RequestParam(name = "firstName", defaultValue = "User") String newfirstName,
-                        @RequestParam(name = "secondName", defaultValue = "") String newsecondName,
-                        @RequestParam(name = "nickname", defaultValue = "") String newnickname,
-                        @RequestParam(name = "telephone", defaultValue = "") String newtelephone,
-                        @RequestParam(name = "password", defaultValue = "") String newpassword,
-                        Model model) {
+                               @RequestParam(name = "secondName", defaultValue = "") String newsecondName,
+                               @RequestParam(name = "nickname", defaultValue = "") String newnickname,
+                               @RequestParam(name = "telephone", defaultValue = "") String newtelephone,
+                               @RequestParam(name = "password", defaultValue = "") String newpassword,
+                               Model model) {
         log.info("owner");
         Client client = new Client();
         client.setPhoneNumber(Long.parseLong(newtelephone));
@@ -82,6 +81,7 @@ public class MainController {
         clientService.createClient(client);
         model.addAttribute("isDoctor", false);
         log.info("test {}", client);
+        model.addAttribute("answer","Вы успешно зарегистрировались!");
         return "success-reg";
     }
 
@@ -94,7 +94,7 @@ public class MainController {
                                @RequestParam(name = "specialty", defaultValue = "") String newspecialty,
                                @RequestParam(name = "idcard", defaultValue = "") String newidcard,
                                Model model) {
-        log.info("Client registration!!!");
+        log.info("Doctor registration!!!");
         Client client = new Client();
         client.setFirstName(newfirstName);
         client.setSecondName(newsecondName);
@@ -107,7 +107,11 @@ public class MainController {
         client.setIdCard(newidcard);
         client.setRole(Role.DOCTOR);
         log.info("All good");
-        doctorService.createDoctor(client, doctorInfo);
+        if (doctorService.createDoctor(client)) {
+            model.addAttribute("answer", "Вы успешно зарегистрировались! Добро пожаловать" + client.getFirstName() + " " + client.getSecondName());
+        } else {
+            model.addAttribute("answer", "Ошибка регистрации доктора. Если у вы доктор и у вас возникли проблемы регистрации, свяжитесь с начальством!");
+        }
         return "success-reg";
     }
 }

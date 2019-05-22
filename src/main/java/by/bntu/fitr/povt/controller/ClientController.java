@@ -130,6 +130,15 @@ public class ClientController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping(path = "/showPet")
+    public String showInfoPetforOwner(Model model, @RequestParam(name = "id-pet") Integer id) {
+        Pet pet = petService.getPetbyId(id);
+        log.info("pet is {}", pet);
+        model.addAttribute("pet", pet);
+        return "pet-page";
+    }
+
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/addPetById")
     public void addPetById(@RequestParam(name = "pet-id") String petId) {

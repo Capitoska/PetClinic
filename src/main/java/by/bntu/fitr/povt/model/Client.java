@@ -20,9 +20,9 @@ public class Client {
     @OneToOne
     @JoinTable(
             name = "doctor_info",
-            joinColumns = @JoinColumn(name = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id"))
-    DoctorInfo doctorInfo;
+            joinColumns = @JoinColumn(name = "doctor_id", insertable = false, updatable = false),
+            inverseJoinColumns = @JoinColumn(name = "doctor_id", insertable = false, updatable = false))
+    private DoctorInfo doctorInfo;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

@@ -10,6 +10,6 @@ import java.util.List;
 public interface DoctorService {
     Client getDoctorByUsername(String username);
     List<DiseaseHistory> getAllDiseaseBySpecialty(Specialty specialty);
-    void createDoctor(Client client, DoctorInfo doctorInfo);
-    void updateDoctor(Client client, DoctorInfo doctorInfo);
+    boolean createDoctor(Client client);
+    void updateDoctor(Client client);
 }

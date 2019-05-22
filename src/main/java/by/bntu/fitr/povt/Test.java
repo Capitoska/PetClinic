@@ -29,14 +29,14 @@ public class Test {
 
     @EventListener
     public void on(ApplicationReadyEvent event) {
-        Client client = clientService.getClientById(8);
-        Pet pet = petService.getPetbyId(4);
+//        Client client = clientService.getClientById(8);
+//        Pet pet = petService.getPetbyId(4);
 //        log.info(pet.getName());
 //        log.info(client.getUsername());
 //        visitService.addVisit(client, pet, "Не открывается одно глазко", LocalDate.now(), Specialty.DENTIST);
 //        visitService.addVisit(client, pet, "Пришёл с большим шрамом.", LocalDate.now(), Specialty.DENTIST);
-        DiseaseHistory history = visitService.getDiseaseHistoryById(4);
-        visitService.doctorAnswer(history,client,"С вашим питомцем все хорошо!");
+//        DiseaseHistory history = visitService.getDiseaseHistoryById(4);
+//        visitService.doctorAnswer(history,client,"С вашим питомцем все хорошо!");
 
     }
 }

@@ -5,6 +5,7 @@ import by.bntu.fitr.povt.model.DiseaseHistory;
 import by.bntu.fitr.povt.model.DoctorInfo;
 import by.bntu.fitr.povt.model.Specialty;
 import by.bntu.fitr.povt.repository.DiseaseHistoryRepository;
+import by.bntu.fitr.povt.repository.DoctorCardsRepository;
 import by.bntu.fitr.povt.repository.DoctorRepository;
 import by.bntu.fitr.povt.repository.Repository;
 import lombok.Setter;
@@ -22,6 +23,9 @@ public class DefaultDoctorService implements DoctorService {
     private DoctorRepository doctorRepository;
     @Setter(onMethod_ = @Autowired)
     private Repository<DoctorInfo> doctorInfoRepository;
+
+    @Setter(onMethod_ = @Autowired)
+    private DoctorCardsRepository doctorCardsRepository;
 
     @Setter(onMethod_ = @Autowired)
     private DiseaseHistoryRepository diseaseHistoryRepository;
@@ -42,17 +46,23 @@ public class DefaultDoctorService implements DoctorService {
 
     @Override
     @Transactional
-    public void createDoctor(Client client, DoctorInfo doctorInfo) {
-        log.info("Work create Client");
-        doctorInfoRepository.saveOrUpdate(doctorInfo);
-        doctorRepository.save(client);
+    public boolean createDoctor(Client client) {
+        log.info("Work create Doctor");
+        log.info(doctorCardsRepository.find(client.getIdCard()));
+        if(doctorCardsRepository.find(client.getIdCard()) != null){
+            doctorInfoRepository.saveOrUpdate(client.getDoctorInfo());
+            doctorRepository.save(client);
+            doctorCardsRepository.deleteByCard(client.getIdCard());
+            return true;
+        }
+        return false;
     }
 
     @Override
     @Transactional
-    public void updateDoctor(Client client, DoctorInfo doctorInfo) {
+    public void updateDoctor(Client client) {
         log.info("Work UpdateDoctor");
-        doctorInfoRepository.update(doctorInfo);
+        doctorInfoRepository.update(client.getDoctorInfo());
         doctorRepository.update(client);
     }
 }

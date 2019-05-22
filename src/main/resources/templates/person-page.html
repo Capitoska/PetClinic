@@ -149,13 +149,48 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец записан</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="modal-close-button-write" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+<div class="modal fade" id="showMedCard" tabindex="-1" role="dialog" aria-labelledby="showMedCardTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="showMedCardTitle" style="margin-left: 8em">Посмотреть медкарту по ID</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <form action="/user/showPet" method="get" name="show-medcard-by-id-form", id = "show-medcard-by-id-form">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="id-pet"placeholder="ID">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="show-medcard-by-id" name="show-medcard-by-id">Показать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="modal fade" id="deletePetID" tabindex="-1" role="dialog" aria-labelledby="deletePetIDTitle"
      aria-hidden="true">
@@ -242,7 +277,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец удален</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" id="modal-close-button-delete" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -285,10 +320,13 @@
 <h2 align="center">Ваши животные</h2>
 </br>
 <div class="row" align="center">
-    <div class="col-md-3"></div>
+    <div class="col-md-2"></div>
     <div class="btn-group-horizontal">
         <button type="button" class="btn2 btn-dark add" data-target="#addPet" style="margin-right: 5px"
                 data-toggle="modal">Добавить
+        </button>
+        <button type="button" class="btn2 btn-dark add" data-target="#showMedCard" style="margin-right: 5px"
+                data-toggle="modal">Медкарта
         </button>
         <button type="button" class="btn2 btn-dark add" data-target="#addPetById" style="margin-right: 5px"
                 data-toggle="modal">Добавить по ID
