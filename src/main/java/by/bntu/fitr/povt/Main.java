@@ -2,11 +2,13 @@ package by.bntu.fitr.povt;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import com.p6spy.engine.spy.P6DataSource;
+import org.flywaydb.core.Flyway;
 import org.hibernate.SessionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
@@ -30,6 +32,7 @@ public class Main {
     }
 
     @Bean
+    @DependsOn("flyway")
     public LocalSessionFactoryBean sessionFactory(DataSource source) {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(source);
@@ -47,6 +50,16 @@ public class Main {
 
         sessionFactory.setHibernateProperties(prop);
         return sessionFactory;
+    }
+
+    @Bean(initMethod = "migrate")
+    public Flyway flyway(DataSource dataSource) {
+        Flyway flyway = new Flyway();
+        flyway.setDataSource(dataSource);
+        flyway.setBaselineOnMigrate(true);
+        flyway.setLocations("classpath:db/migration");
+        flyway.setEncoding("UTF-8");
+        return flyway;
     }
 
     @Bean
