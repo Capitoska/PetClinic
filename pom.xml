@@ -28,6 +28,20 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
+        <!--Для работы с Configuration-processor-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+        <!--Дополнение к String. Пока не точно. Надо будет разобрать-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
         <!-- Spring поддержка ORM -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -94,6 +108,13 @@
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!--Аннотации IDEA-->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>16.0.1</version>
         </dependency>
 
         <!-- exclude junit 4 -->
