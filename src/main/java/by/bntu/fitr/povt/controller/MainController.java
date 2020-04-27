@@ -12,7 +12,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -68,7 +68,7 @@ public class MainController {
      * */
     @GetMapping("/sign-up")
     public String signUp(Model model, @RequestParam(name = "user") String user) {
-        model.addAttribute(new SignUpUserDto());
+        model.addAttribute("signUpUser",new SignUpUserDto());
         if (user.equals("doctor")) {
             model.addAttribute("specialtyList", Arrays.asList(Specialty.values()));
             model.addAttribute("user", "doctor");
@@ -91,13 +91,14 @@ public class MainController {
     public String registration(Model model, @RequestParam(name = "user") String user){
         Boolean isDoctor = user.equals("doctor");
         model.addAttribute("user",user);
+        model.addAttribute("signUpUser", new SignUpUserDto());
         return "sign-up";
     }
 
     @PostMapping("/registration")
     public String registration(@ModelAttribute(name = "signUpUser") @Valid SignUpUserDto signUpUserDto,
-                               Errors errors, @RequestParam(name = "user") String user,
-                                       Model model) {
+                               BindingResult errors, @RequestParam(name = "user") String user,
+                               Model model) {
         Boolean isDoctor = user.equals("doctor");
 
         if(errors.hasErrors()){

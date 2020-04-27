@@ -15,7 +15,8 @@ public class SignUpConverter {
                 .secondName(signUpUserDto.getSecondName())
                 .username(signUpUserDto.getNickName())
                 .password(signUpUserDto.getPassword())
-                .phoneNumber(Long.parseLong(signUpUserDto.getPhone()))
+//                .phoneNumber(Long.parseLong(signUpUserDto.getPhone()))
+                .phoneNumber(signUpUserDto.getPhone())
                 .role(Role.USER).build();
         return client;
     }

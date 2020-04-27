@@ -76,7 +76,8 @@ public class DefaultDoctorService implements DoctorService {
                     .firstName(client.getFirstName())
                     .secondName(client.getSecondName())
                     .username(client.getNickName())
-                    .phoneNumber(Long.parseLong(client.getPhone()))
+//                    .phoneNumber(Long.parseLong(client.getPhone()))
+                    .phoneNumber(client.getPhone())
                     .idCard(client.getIdCard())
                     .doctorInfo(doctorInfo)
                     .build();
