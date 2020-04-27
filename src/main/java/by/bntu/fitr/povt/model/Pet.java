@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
@@ -12,7 +11,7 @@ import java.util.Set;
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private Integer id;
 
     @Column(name = "gender", nullable = false)

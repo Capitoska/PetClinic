@@ -11,6 +11,13 @@ import java.util.List;
 @Repository
 public class HibernateClientRepository extends HibernateRepository<Client> implements ClientRepository {
 
+    @Override
+    public Client getClientByUsernameAndPassword(String username, String password) {
+        return (Client) sessionFactory.getCurrentSession().createQuery("from Client " +
+                "where username=:username and password=:password")
+                .setParameter("password",password).setParameter("username",username).uniqueResult();
+    }
+
     @SuppressWarnings("unchecked")
     @Override
     public List<Client> findByIdPet(int idPet) {
@@ -36,8 +43,8 @@ public class HibernateClientRepository extends HibernateRepository<Client> imple
     public void deletePetFromClient(Client client, Pet pet) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("delete from ClientPet where pet=:pet and client=:client");
-        query.setParameter("pet",pet);
-        query.setParameter("client",client);
+        query.setParameter("pet", pet);
+        query.setParameter("client", client);
         int result = query.executeUpdate();
     }
 

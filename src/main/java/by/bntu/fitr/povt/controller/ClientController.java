@@ -1,6 +1,8 @@
 package by.bntu.fitr.povt.controller;
 
-import by.bntu.fitr.povt.model.*;
+import by.bntu.fitr.povt.model.Client;
+import by.bntu.fitr.povt.model.Pet;
+import by.bntu.fitr.povt.model.Specialty;
 import by.bntu.fitr.povt.service.ClientService;
 import by.bntu.fitr.povt.service.DoctorService;
 import by.bntu.fitr.povt.service.PetService;
@@ -38,47 +40,47 @@ public class ClientController {
 
     public String getCurrentUsername() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
         return auth.getName();
     }
 
     // TODO: 5/17/2019 Hardcode, replace in future
     @GetMapping("/show-pet-information")
-    public String showPetInformation(){
+    public String showPetInformation() {
         return "pet-page";
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/delPetById")
     public ResponseEntity delPetById(@RequestParam(name = "id-pet") Integer idPet,
-            Model model){
+                                     Model model) {
         log.info("Use method Delete Pet By Id");
         log.info(getCurrentUsername());
         log.info(idPet);
-        clientService.removePetById(clientService.getClientByUsername(getCurrentUsername()),idPet);
+        clientService.removePetById(clientService.getClientByUsername(getCurrentUsername()), idPet);
         return ResponseEntity.noContent().build();
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/addAnAppointment")
     public ResponseEntity addAnAppointment(@RequestParam(name = "description") String description,
-                                           @RequestParam(name = "IDPet")Integer petId,
-                                           @RequestParam(name = "date")String date,
+                                           @RequestParam(name = "IDPet") Integer petId,
+                                           @RequestParam(name = "date") String date,
                                            @RequestParam(name = "typeOfDoctor") Specialty specialty,
-                                           Model model){
+                                           Model model) {
         log.info("Добавляем данные...");
         log.info(date);
         Client client = clientService.getClientByUsername(getCurrentUsername());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate localDate= LocalDate.parse(date,formatter);
-        visitService.addVisit(client,petService.getPetbyId(petId),description,localDate,specialty);
+        LocalDate localDate = LocalDate.parse(date, formatter);
+        visitService.addVisit(client, petService.getPetbyId(petId), description, localDate, specialty);
         return ResponseEntity.noContent().build();
     }
+
 
     @GetMapping("/person-page")
     public String PersonPage(Model model) {
         log.info(getCurrentUsername());
-        if(clientService.getClientByUsername(getCurrentUsername()).getRole().getDisplay().equals("user")){
+        if (clientService.getClientByUsername(getCurrentUsername()).getRole().getDisplay().equals("user")) {
             Client client = clientService.getClientByUsername(getCurrentUsername());
             log.info(client.getFirstName());
             log.info(client.getPhoneNumber());
@@ -98,12 +100,10 @@ public class ClientController {
         model.addAttribute("specialty", client.getDoctorInfo().getSpecialty().getDisplayName());
         model.addAttribute("diseaseHistories", doctorService.getAllDiseaseBySpecialty(client.getDoctorInfo().getSpecialty()));
         return "doctor-page";
-
-
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PostMapping("/addPet")
+    @PostMapping("/pet")
     public ResponseEntity addPet(@RequestParam(name = "selectType") String selectType,
                                  @RequestParam(name = "age") String age,
                                  @RequestParam(name = "name") String name,
@@ -122,16 +122,16 @@ public class ClientController {
             petService.createPet(pet);
             clientService.addPet(client, pet);
             clientService.update(client);
-            log.info("Good");
-        } catch (Exception ex){
+            log.info("Working addPet controller (PostMapping)");
+        } catch (Exception ex) {
             log.debug(ex);
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping(path = "/showPet")
-    public String showInfoPetforOwner(Model model, @RequestParam(name = "id-pet") Integer id) {
+    @GetMapping(path = "/pet/{id}")
+    public String showInfoPetforOwner(Model model, @PathVariable(name = "id") Integer id) {
         Pet pet = petService.getPetbyId(id);
         log.info("pet is {}", pet);
         model.addAttribute("pet", pet);
@@ -140,16 +140,16 @@ public class ClientController {
 
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PostMapping("/addPetById")
-    public void addPetById(@RequestParam(name = "pet-id") String petId) {
+    @PostMapping("/pet/{id}")
+    public void addPetById(@PathVariable(name = "id") Integer petId) {
         Client client = clientService.getClientByUsername(getCurrentUsername());
         log.info("Not Good");
         log.info(petId);
-        log.info(petService.getPetbyId(Integer.parseInt(petId)));
-        log.info(petService.getPetbyId(Integer.parseInt(petId)));
-        log.info(petService.getPetbyId(Integer.parseInt(petId)));
-        log.info(petService.getPetbyId(Integer.parseInt(petId)));
-        clientService.addPet(client, petService.getPetbyId(Integer.parseInt(petId)));
+        log.info(petService.getPetbyId(petId));
+        log.info(petService.getPetbyId(petId));
+        log.info(petService.getPetbyId(petId));
+        log.info(petService.getPetbyId(petId));
+        clientService.addPet(client, petService.getPetbyId(petId));
         clientService.update(client);
     }
 }

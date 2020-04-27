@@ -1,5 +1,6 @@
 package by.bntu.fitr.povt.service;
 
+import by.bntu.fitr.povt.dto.SignUpUserDto;
 import by.bntu.fitr.povt.model.Client;
 import by.bntu.fitr.povt.model.Pet;
 import by.bntu.fitr.povt.repository.ClientRepository;
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
@@ -23,11 +23,11 @@ public class DefaultClientService implements ClientService {
     @Setter(onMethod_ = @Autowired)
     private PetRepository petRepository;
 
+
     @Override
     @Transactional
     public void removePetById(Client client, Integer idPet) {
         clientRepository.deletePetFromClient(client,petRepository.findByIdPet(idPet));
-        clientRepository.update(client);
     }
 
     @Override
@@ -37,9 +37,19 @@ public class DefaultClientService implements ClientService {
     }
 
     @Override
+    public void createClient(SignUpUserDto signUpUserDto) {
+
+    }
+
+    @Override
     @Transactional
     public Client getClientById(Integer id) {
         return  clientRepository.findById(id);
+    }
+
+    @Override
+    public Client getClientByUsernameAndPassword(String username, String password) {
+        return clientRepository.getClientByUsernameAndPassword(username,password);
     }
 
     @Override

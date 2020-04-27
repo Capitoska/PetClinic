@@ -48,7 +48,7 @@
                 </button>
 
             </div>
-            <form id="pet-form" action="/user/addPet" method="post">
+            <form id="pet-form" action="/user/pet" method="post">
                 <div id="pet-form-alert" class="alert alert-danger d-none" role="alert">
                     Вы ввели неправильные данные
                 </div>
@@ -106,11 +106,11 @@
                 </button>
 
             </div>
-            <form id="pet-form-by-Id" name="pet-form-by-Id" action="/user/addPetById" method="post">
+            <form id="pet-form-by-Id" name="pet-form-by-Id" action="/user/pet/" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="pet-id" placeholder="ID" id="ID">
+                            <input type="text" class="form-control" name="pet-id" placeholder="ID" id="pet-id">
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец добавлен</h5>
-                <button type="button" id="modal-close-button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="modal-close-button" class="close reload-button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -149,7 +149,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец записан</h5>
-                <button type="button" id="modal-close-button-write" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="modal-close-button-write" class="close reload-button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -277,7 +277,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец удален</h5>
-                <button type="button" class="close" id="modal-close-button-delete" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close reload-button" id="modal-close-button-delete"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

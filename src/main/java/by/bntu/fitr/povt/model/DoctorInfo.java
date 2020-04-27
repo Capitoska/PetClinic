@@ -1,12 +1,18 @@
 package by.bntu.fitr.povt.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
+@Builder
 @Table(name = "doctor_info")
+@NoArgsConstructor
+@AllArgsConstructor
 public class DoctorInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

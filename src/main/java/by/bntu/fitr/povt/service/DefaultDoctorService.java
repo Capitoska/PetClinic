@@ -1,5 +1,6 @@
 package by.bntu.fitr.povt.service;
 
+import by.bntu.fitr.povt.dto.SignUpUserDto;
 import by.bntu.fitr.povt.model.Client;
 import by.bntu.fitr.povt.model.DiseaseHistory;
 import by.bntu.fitr.povt.model.DoctorInfo;
@@ -39,17 +40,23 @@ public class DefaultDoctorService implements DoctorService {
     // TODO: 5/19/2019 не забыть сделать для доктора.
     @Override
     @Transactional
-    public List<DiseaseHistory> getAllDiseaseBySpecialty(Specialty specialty)
-    {
+    public List<DiseaseHistory> getAllDiseaseBySpecialty(Specialty specialty) {
         return diseaseHistoryRepository.getAllDiseaseBySpecialty(specialty);
     }
+
+    @Override
+    @Transactional
+    public boolean isDoctorCardByName(String cardName) {
+        return doctorCardsRepository.find(cardName) != null;
+    }
+
 
     @Override
     @Transactional
     public boolean createDoctor(Client client) {
         log.info("Work create Doctor");
         log.info(doctorCardsRepository.find(client.getIdCard()));
-        if(doctorCardsRepository.find(client.getIdCard()) != null){
+        if (isDoctorCardByName(client.getIdCard())) {
             doctorInfoRepository.saveOrUpdate(client.getDoctorInfo());
             doctorRepository.save(client);
             doctorCardsRepository.deleteByCard(client.getIdCard());
@@ -57,6 +64,30 @@ public class DefaultDoctorService implements DoctorService {
         }
         return false;
     }
+
+
+    @Override
+    @Transactional
+    public boolean createDoctor(SignUpUserDto client) {
+        if (isDoctorCardByName(client.getIdCard())) {
+            DoctorInfo doctorInfo = new DoctorInfo();
+            doctorInfo.setSpecialty(Specialty.valueOf(client.getSpecialistic()));
+            Client doctor = Client.builder().password(client.getPassword())
+                    .firstName(client.getFirstName())
+                    .secondName(client.getSecondName())
+                    .username(client.getNickName())
+                    .phoneNumber(Long.parseLong(client.getPhone()))
+                    .idCard(client.getIdCard())
+                    .doctorInfo(doctorInfo)
+                    .build();
+            doctorInfoRepository.saveOrUpdate(doctor.getDoctorInfo());
+            doctorRepository.save(doctor);
+            doctorCardsRepository.deleteByCard(doctor.getIdCard());
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     @Transactional

@@ -2,7 +2,7 @@ $(document).on('submit', '#pet-form', function (event) {
     event.preventDefault();
     var formData = $('#pet-form').serialize();
     $.post({
-        url: '/user/addPet',
+        url: '/user/pet',
         data: formData,
         success: function () {
             $('#addPet').modal('hide');
@@ -17,10 +17,9 @@ $(document).on('submit', '#pet-form', function (event) {
 
 $(document).on('submit', '#pet-form-by-Id', function (event) {
     event.preventDefault();
-    var formData = $('#pet-form-by-Id').serialize();
+    var id = $('#pet-id').val();
     $.post({
-        url: '/user/addPetById',
-        data: formData,
+        url: '/user/pet/'+ id,
         success: function () {
             $('#addPetById').modal('hide');
             $('#Success').modal('show');
@@ -63,16 +62,28 @@ $(document).on('submit', '#add-diagnoses-form', function (event) {
     var formData = form.serialize();
     var id = $('#addDiagnoses').attr('diagnos-id');
     $.post({
-        url: '/doctor/addDiagnoses/'+id,
+        url: '/doctor/addDiagnoses/' + id,
         data: formData,
         success: function () {
             $('#addDiagnoses').modal('hide');
             $('#Success1').modal('show');
-
         }
     });
     return true;
 });
+
+// $('#choose-owner-registration').click(function () {
+//     // alert("this code is valid");
+//     $.get({
+//         url: '/sign-up',
+//         success: function (govno, test) {
+//             document.documentElement.innerHTML = govno;
+//             $("#sign-up-page .doctor-feature").remove();
+//         },
+//     })
+// });
+
+
 
 $('.diagnos-add').click(function () {
     var modalForm = $('#addDiagnoses');
@@ -81,19 +92,50 @@ $('.diagnos-add').click(function () {
     return false;
 });
 
+// $('#choose-doctor-registration').click(function () {
+//     $.get( "/sign-up", {backend: 'govno'}, function( data ) {
+//     }).done(function (data) {
+//         $('body').html(data);
+//         window.location = '/sign-up';
+//     });
+// });
 
-$('#modal-close-button').click(function () {
+// $('#choose-owner-registration').click(function () {
+//     $.get( "/sign-up", function( data ) {
+//     }).done(function (data) {
+//         $('body').html(data);
+//
+//         window.location = '/sign-up';
+//         $('select').remove();
+//     });
+// });
+//
+// $("#choose-doctor-registration").click(function () {
+//     $.get({
+//         url:"/sign-up",
+//         success: function (htmlCode) {
+//             document.documentElement.innerHTML = htmlCode;
+//
+//         },
+//     })
+// });
+
+//
+// $('#modal-close-button').click(function () {
+//     location.reload()
+// });
+
+// $('#modal-close-button-write').click(function () {
+//     location.reload()
+// });
+
+$('.reload-button').click(function () {
     location.reload()
 });
-
-$('#modal-close-button-write').click(function () {
-    location.reload()
-});
-
-
-$('#modal-close-button-delete').click(function () {
-    location.reload()
-});
+//
+// $('#modal-close-button-delete').click(function () {
+//     location.reload()
+// });
 
 
 
