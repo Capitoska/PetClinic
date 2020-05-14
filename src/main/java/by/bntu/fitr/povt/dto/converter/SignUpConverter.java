@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SignUpConverter {
-    public Client toOwner(SignUpUserDto signUpUserDto){
+    public Client toOwner(SignUpUserDto signUpUserDto) {
         Client client = Client.builder()
                 .firstName(signUpUserDto.getFirstName())
                 .secondName(signUpUserDto.getSecondName())
@@ -21,13 +21,13 @@ public class SignUpConverter {
         return client;
     }
 
-    public Client toDoctor(SignUpUserDto signUpUserDto){
-        DoctorInfo doctorInfo =DoctorInfo.builder().specialty(Specialty.valueOf(signUpUserDto.getSpecialistic())).build();
+    public Client toDoctor(SignUpUserDto signUpUserDto) {
+        DoctorInfo doctorInfo = DoctorInfo.builder().specialty(Specialty.valueOf(signUpUserDto.getSpecialistic())).build();
         Client client = toOwner(signUpUserDto);
         doctorInfo.setClient(client);
         client.setDoctorInfo(doctorInfo);
         client.setRole(Role.DOCTOR);
         client.setIdCard(signUpUserDto.getIdCard());
-        return  client;
+        return client;
     }
 }

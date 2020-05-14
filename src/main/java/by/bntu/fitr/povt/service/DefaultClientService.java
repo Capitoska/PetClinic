@@ -27,7 +27,7 @@ public class DefaultClientService implements ClientService {
     @Override
     @Transactional
     public void removePetById(Client client, Integer idPet) {
-        clientRepository.deletePetFromClient(client,petRepository.findByIdPet(idPet));
+        clientRepository.deletePetFromClient(client, petRepository.findByIdPet(idPet));
     }
 
     @Override
@@ -44,12 +44,12 @@ public class DefaultClientService implements ClientService {
     @Override
     @Transactional
     public Client getClientById(Integer id) {
-        return  clientRepository.findById(id);
+        return clientRepository.findById(id);
     }
 
     @Override
     public Client getClientByUsernameAndPassword(String username, String password) {
-        return clientRepository.getClientByUsernameAndPassword(username,password);
+        return clientRepository.getClientByUsernameAndPassword(username, password);
     }
 
     @Override

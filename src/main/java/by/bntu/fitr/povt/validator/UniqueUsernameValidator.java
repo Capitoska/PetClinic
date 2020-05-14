@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class UniqueUsernameValidator implements ConstraintValidator<UniqueName,String> {
+public class UniqueUsernameValidator implements ConstraintValidator<UniqueName, String> {
 
     private ClientService clientService;
 
@@ -17,7 +17,7 @@ public class UniqueUsernameValidator implements ConstraintValidator<UniqueName,S
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext context) {
-        if(username == null){
+        if (username == null) {
             return true;
         }
 

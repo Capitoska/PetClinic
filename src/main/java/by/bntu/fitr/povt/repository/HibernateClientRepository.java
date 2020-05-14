@@ -15,7 +15,7 @@ public class HibernateClientRepository extends HibernateRepository<Client> imple
     public Client getClientByUsernameAndPassword(String username, String password) {
         return (Client) sessionFactory.getCurrentSession().createQuery("from Client " +
                 "where username=:username and password=:password")
-                .setParameter("password",password).setParameter("username",username).uniqueResult();
+                .setParameter("password", password).setParameter("username", username).uniqueResult();
     }
 
     @SuppressWarnings("unchecked")

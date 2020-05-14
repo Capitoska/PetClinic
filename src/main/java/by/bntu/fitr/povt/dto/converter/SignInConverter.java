@@ -12,7 +12,7 @@ public class SignInConverter {
     @Autowired
     ClientService clientService;
 
-    public Client toUserEntity(SignInDto signInDto){
-        return clientService.getClientByUsernameAndPassword(signInDto.getUsername(),signInDto.getPassword());
+    public Client toUserEntity(SignInDto signInDto) {
+        return clientService.getClientByUsernameAndPassword(signInDto.getUsername(), signInDto.getPassword());
     }
 }

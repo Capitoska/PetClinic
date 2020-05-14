@@ -19,7 +19,7 @@ $(document).on('submit', '#pet-form-by-Id', function (event) {
     event.preventDefault();
     var id = $('#pet-id').val();
     $.post({
-        url: '/user/pet/'+ id,
+        url: '/user/pet/' + id,
         success: function () {
             $('#addPetById').modal('hide');
             $('#Success').modal('show');
@@ -82,7 +82,6 @@ $(document).on('submit', '#add-diagnoses-form', function (event) {
 //         },
 //     })
 // });
-
 
 
 $('.diagnos-add').click(function () {
