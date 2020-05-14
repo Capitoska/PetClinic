@@ -107,7 +107,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец добавлен</h5>
-                <button type="button" id="modal-close-button" class="close reload-button" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="modal-close-button" class="close reload-button" data-dismiss="modal"
+                        aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -220,12 +221,17 @@
                     <td style="width: 450px; border-right: hidden; border-top: hidden; border-bottom: hidden ">
                         <div class="row">
                             <div>
-                                <a th:href="${'/doctor/pet/' + diseaseHistory.getPet().getId()}" ><button class="btn2 btn-dark add" style="margin-left: 7px">Медкарта</button></a>
+                                <a th:href="${'/doctor/pet/' + diseaseHistory.getPet().getId()}">
+                                    <button class="btn2 btn-dark add" style="margin-left: 7px">Медкарта</button>
+                                </a>
                             </div>
 
                             <div>
-                                <a th:id="${diseaseHistory.getId()}" class="diagnos-add"><button class="btn2 btn-dark add">Поставить
-                                    диагноз</button></a>
+                                <a th:id="${diseaseHistory.getId()}" class="diagnos-add">
+                                    <button class="btn2 btn-dark add">Поставить
+                                        диагноз
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </td>

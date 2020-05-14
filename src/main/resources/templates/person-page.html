@@ -54,7 +54,7 @@
                 </div>
                 <div class="modal-body">
 
-                <div class="form-group">
+                    <div class="form-group">
                         <div class="input-group">
                             <input type="text" class="form-control" name="name" placeholder="Имя" id="PetName">
                         </div>
@@ -85,7 +85,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить
+                    <button type="submit" id="add-pet-button" name="add-pet-button"
+                            class="btn btn-success my-2 my-lg-0">Добавить
                     </button>
                 </div>
             </form>
@@ -116,12 +117,13 @@
                 </div>
 
                 <!--<div class="modal-footer">-->
-                    <!--<button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить-->
-                    <!--</button>-->
+                <!--<button type="submit" id="add-pet-button" name="add-pet-button" class="btn btn-success my-2 my-lg-0">Добавить-->
+                <!--</button>-->
                 <!--</div>-->
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="add-pet-button by " name="add-pet-button-id">Добавить
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="add-pet-button by "
+                            name="add-pet-button-id">Добавить
                     </button>
                 </div>
             </form>
@@ -135,7 +137,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец добавлен</h5>
-                <button type="button" id="modal-close-button" class="close reload-button" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="modal-close-button" class="close reload-button" data-dismiss="modal"
+                        aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -149,15 +152,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец записан</h5>
-                <button type="button" id="modal-close-button-write" class="close reload-button" data-dismiss="modal" aria-label="Close">
+                <button type="button" id="modal-close-button-write" class="close reload-button" data-dismiss="modal"
+                        aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
         </div>
     </div>
 </div>
-
-
 
 
 <div class="modal fade" id="showMedCard" tabindex="-1" role="dialog" aria-labelledby="showMedCardTitle"
@@ -173,23 +175,24 @@
                 </button>
 
             </div>
-            <form action="/user/showPet" method="get" name="show-medcard-by-id-form", id = "show-medcard-by-id-form">
+            <form action="/user/showPet" method="get" name="show-medcard-by-id-form" , id="show-medcard-by-id-form">
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="id-pet"placeholder="ID">
+                            <input type="text" class="form-control" name="id-pet" placeholder="ID">
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="show-medcard-by-id" name="show-medcard-by-id">Показать</button>
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="show-medcard-by-id"
+                            name="show-medcard-by-id">Показать
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
 
 
 <div class="modal fade" id="deletePetID" tabindex="-1" role="dialog" aria-labelledby="deletePetIDTitle"
@@ -205,18 +208,19 @@
                 </button>
 
             </div>
-            <form action="/user/delPetById" method="post" name="del-pet-by-id-form", id = "del-pet-by-id-form">
+            <form action="/user/delPetById" method="post" name="del-pet-by-id-form" , id="del-pet-by-id-form">
                 <div class="modal-body">
 
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="id-pet"placeholder="ID">
+                            <input type="text" class="form-control" name="id-pet" placeholder="ID">
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="del-pet-button-id" name="del-pet-button-id">Удалить
+                    <button type="submit" class="btn btn-success my-2 my-lg-0" id="del-pet-button-id"
+                            name="del-pet-button-id">Удалить
                     </button>
                 </div>
             </form>
@@ -259,12 +263,14 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" name="description" id = "description" type="text" placeholder="Что случилось?">
+                        <input class="form-control" name="description" id="description" type="text"
+                               placeholder="Что случилось?">
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" name="Appoirtment" id="Appoirtment" class="btn btn-success my-2 my-lg-0" >Записать
+                    <button type="submit" name="Appoirtment" id="Appoirtment" class="btn btn-success my-2 my-lg-0">
+                        Записать
                     </button>
                 </div>
             </form>
@@ -277,7 +283,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Питомец удален</h5>
-                <button type="button" class="close reload-button" id="modal-close-button-delete"  data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close reload-button" id="modal-close-button-delete" data-dismiss="modal"
+                        aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -331,8 +338,12 @@
         <button type="button" class="btn2 btn-dark add" data-target="#addPetById" style="margin-right: 5px"
                 data-toggle="modal">Добавить по ID
         </button>
-        <button type="button" style="margin-right: 5px" class="btn2 btn-dark del" data-target="#deletePetID" data-toggle="modal">Удалить</button>
-        <button type="button" style="margin-right: 5px" class="btn2 btn-dark rec" data-target="#goToDoctor" data-toggle="modal" >Запись на прием</button>
+        <button type="button" style="margin-right: 5px" class="btn2 btn-dark del" data-target="#deletePetID"
+                data-toggle="modal">Удалить
+        </button>
+        <button type="button" style="margin-right: 5px" class="btn2 btn-dark rec" data-target="#goToDoctor"
+                data-toggle="modal">Запись на прием
+        </button>
     </div>
 </div>
 </br>
