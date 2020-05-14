@@ -160,25 +160,32 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-offset-3 col-md-6">
-            <form class="form-horizontal"   action="/registration" method="post" th:object="${signUpUser}" autocomplete="on" >
+            <form class="form-horizontal" action="/registration" method="post" th:object="${signUpUser}"
+                  autocomplete="on">
                 <span class="heading">РЕГИСТРАЦИЯ</span>
                 <div class="form-group">
                     <input class="form-control" name="firstName" type="text" placeholder="Имя"/>
                     <i class="fa fa-user"></i>
-                    <div th:if="${#fields.hasErrors('firstName')}" class="alert alert-danger" role="alert"><th:block th:errors="*{firstName}" /></div>
+                    <div th:if="${#fields.hasErrors('firstName')}" class="alert alert-danger" role="alert">
+                        <th:block th:errors="*{firstName}"/>
+                    </div>
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="secondName" placeholder="Фамилия"/>
                     <i class="fa fa-user"></i>
-                    <div th:if="${#fields.hasErrors('secondName')}" class="alert alert-danger" role="alert"><th:block th:errors="*{secondName}" /></div>
+                    <div th:if="${#fields.hasErrors('secondName')}" class="alert alert-danger" role="alert">
+                        <th:block th:errors="*{secondName}"/>
+                    </div>
                 </div>
-                <div th:if="${isDoctor}" class = "form-group">
+                <div th:if="${isDoctor}" class="form-group">
                     <input class="form-control" name="idCard" type="text" placeholder="Номер вашей карты"/>
                     <i class="fa fa-credit-card"></i>
-                    <div th:if="${#fields.hasErrors('idCard')}" class="alert alert-danger" role="alert"><th:block th:errors="*{idCard}" /></div>
+                    <div th:if="${#fields.hasErrors('idCard')}" class="alert alert-danger" role="alert">
+                        <th:block th:errors="*{idCard}"/>
+                    </div>
                 </div>
-                <div th:if="${isDoctor}" class = "form-group">
-                    <select class="form-control" name="specialistic"  placeholder="Ваша специальность">
+                <div th:if="${isDoctor}" class="form-group">
+                    <select class="form-control" name="specialistic" placeholder="Ваша специальность">
                         <option th:each="specialty,iter : ${specialtyList}"
                                 th:value="${specialty.name()}"
                                 th:text="${specialty.getDisplayName()}"></option>
@@ -187,17 +194,23 @@
                 <div class="form-group">
                     <input class="form-control" name="nickName" placeholder="NickName">
                     <i class="fa fa-user"></i>
-                    <div th:if="${#fields.hasErrors('nickName')}" class="alert alert-danger" role="alert"><th:block th:errors="*{nickName}" /></div>
+                    <div th:if="${#fields.hasErrors('nickName')}" class="alert alert-danger" role="alert">
+                        <th:block th:errors="*{nickName}"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" name="phone"  type="tel" placeholder="Telephone">
-                      <i class="fa fa-phone" aria-hidden="true"></i>
-                    <div th:if="${#fields.hasErrors('phone')}" class="alert alert-danger" role="alert"><th:block th:errors="*{phone}" /></div>
+                    <input class="form-control" name="phone" type="tel" placeholder="Telephone">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <div th:if="${#fields.hasErrors('phone')}" class="alert alert-danger" role="alert">
+                        <th:block th:errors="*{phone}"/>
+                    </div>
                 </div>
                 <div class="form-group help">
                     <input type="password" class="form-control" name="password" placeholder="Password">
                     <i class="fa fa-lock"></i>
-                    <div th:if="${#fields.hasErrors('password')}" class="alert alert-danger" role="alert"><th:block th:errors="*{password}" /></div>
+                    <div th:if="${#fields.hasErrors('password')}" class="alert alert-danger" role="alert">
+                        <th:block th:errors="*{password}"/>
+                    </div>
                 </div>
 
                 <div class="form-group">
