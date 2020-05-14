@@ -39,7 +39,7 @@
         @Override
         public List<DiseaseHistory> getAllDiseaseBySpecialty(Specialty specialty) {
             Session session= sessionFactory.getCurrentSession();
-            Query query = session.createQuery("from DiseaseHistory where doctorType=:specialty");
+            Query query = session.createQuery("from DiseaseHistory where doctorType=:specialty and answer is null");
             query.setParameter("specialty",specialty);
             return query.list();
         }

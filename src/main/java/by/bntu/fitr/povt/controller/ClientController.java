@@ -76,7 +76,6 @@ public class ClientController {
         return ResponseEntity.noContent().build();
     }
 
-
     @GetMapping("/person-page")
     public String PersonPage(Model model) {
         log.info(getCurrentUsername());
@@ -130,14 +129,13 @@ public class ClientController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping(path = "/pet/{id}")
-    public String showInfoPetforOwner(Model model, @PathVariable(name = "id") Integer id) {
+    @GetMapping(path = "/showPet")
+    public String showInfoPetforOwner(Model model, @RequestParam(name = "id-pet") Integer id) {
         Pet pet = petService.getPetbyId(id);
         log.info("pet is {}", pet);
         model.addAttribute("pet", pet);
         return "pet-page";
     }
-
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/pet/{id}")

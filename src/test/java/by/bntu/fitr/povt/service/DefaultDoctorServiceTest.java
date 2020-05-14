@@ -16,8 +16,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @Log4j2
 @SpringBootTest(classes = Main.class)
@@ -41,12 +40,23 @@ class DefaultDoctorServiceTest {
     private  SessionFactory factory;
 
 
-
+    @Transactional
+    @Test
+    void createDoctorNotValidFalse(){
+        Client client = new Client();
+        client.setFirstName("1");
+        client.setSecondName("2");
+        client.setUsername("testusername");
+        client.setPassword("4");
+        client.setPhoneNumber(5L);
+        client.setRole(Role.USER);
+        assertFalse(service.createDoctor(client));
+    }
 
 
     @Transactional
     @Test
-    void createDoctor() {
+    void createDoctorIsValidTrue(){
         DoctorCard card = new DoctorCard();
         card.setCard("test1");
         (doctorCardsRepository).save(card);
@@ -65,17 +75,40 @@ class DefaultDoctorServiceTest {
         client.setRole(Role.DOCTOR);
         client.setIdCard("test1");
         client.setDoctorInfo(doctorInfo);
-        service.createDoctor(client);
-        log.info("ЗАРАБОТАЙ САБАКА");
-        DoctorCard card1 = doctorCardsRepository.find("test1");
-        assertNull(card1);
-
-        Client testusername = doctorRepository.findByUsername("testusername");
-        assertNotNull(testusername);
-        assertNotNull(testusername.getDoctorInfo());
-
-        Client testusername1 = doctorRepository.findByUsername("testusername");
-        doctorInfoRepository.delete(testusername1.getDoctorInfo());
-        doctorRepository.delete(testusername1);
+        assertTrue(service.createDoctor(client));
     }
+//
+//    @Transactional
+//    @Test
+//    void createDoctor() {
+//        DoctorCard card = new DoctorCard();
+//        card.setCard("test1");
+//        (doctorCardsRepository).save(card);
+//
+//        DoctorInfo doctorInfo = new DoctorInfo();
+//        doctorInfo.setSpecialty(Specialty.CARDIOLOGIST);
+//        doctorInfo.setResult(0);
+//        doctorInfo.setSumVote(0);
+//        doctorInfo.setVoteAmount(0);
+//        Client client = new Client();
+//        client.setFirstName("1");
+//        client.setSecondName("2");
+//        client.setUsername("testusername");
+//        client.setPassword("4");
+//        client.setPhoneNumber(5L);
+//        client.setRole(Role.DOCTOR);
+//        client.setIdCard("test1");
+//        client.setDoctorInfo(doctorInfo);
+//        service.createDoctor(client);
+//        DoctorCard card1 = doctorCardsRepository.find("test1");
+//        assertNull(card1);
+//
+//        Client testusername = doctorRepository.findByUsername("testusername");
+//        assertNotNull(testusername);
+//        assertNotNull(testusername.getDoctorInfo());
+//
+//        Client testusername1 = doctorRepository.findByUsername("testusername");
+//        doctorInfoRepository.delete(testusername1.getDoctorInfo());
+//        doctorRepository.delete(testusername1);
+//    }
 }

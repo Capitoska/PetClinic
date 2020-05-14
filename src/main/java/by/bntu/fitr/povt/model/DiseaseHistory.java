@@ -41,14 +41,6 @@ public class DiseaseHistory {
     public String toString() {
         return "DiseaseHistory{" +
                 "id=" + id +
-                ", date=" + date +
-                ", answerDate=" + answerDate +
-                ", pet=" + pet +
-                ", client=" + client +
-                ", doctor=" + doctor +
-                ", description='" + description + '\'' +
-                ", answer='" + answer + '\'' +
-                ", doctorType=" + doctorType +
                 '}';
     }
 

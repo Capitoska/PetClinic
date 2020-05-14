@@ -19,6 +19,10 @@ public class DoctorInfo {
     @Column(nullable = false)
     private Integer id;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "doctor_id")
+    private Client client;
+
     @Column(name = "vote_amount")
     private int voteAmount;
     @Column(name = "sum_vote")

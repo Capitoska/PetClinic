@@ -23,8 +23,11 @@ public class SignUpConverter {
 
     public Client toDoctor(SignUpUserDto signUpUserDto){
         DoctorInfo doctorInfo =DoctorInfo.builder().specialty(Specialty.valueOf(signUpUserDto.getSpecialistic())).build();
-        return  toOwner(signUpUserDto).builder()
-                .role(Role.DOCTOR)
-                .doctorInfo(doctorInfo).build();
+        Client client = toOwner(signUpUserDto);
+        doctorInfo.setClient(client);
+        client.setDoctorInfo(doctorInfo);
+        client.setRole(Role.DOCTOR);
+        client.setIdCard(signUpUserDto.getIdCard());
+        return  client;
     }
 }

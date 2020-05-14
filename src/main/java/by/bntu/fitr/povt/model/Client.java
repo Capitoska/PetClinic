@@ -23,11 +23,13 @@ public class Client {
 
     @Column(name = "doctor_cards", nullable = false)
     private String idCard;
-    @OneToOne
-    @JoinTable(
-            name = "doctor_info",
-            joinColumns = @JoinColumn(name = "doctor_id", insertable = false, updatable = false),
-            inverseJoinColumns = @JoinColumn(name = "doctor_id", insertable = false, updatable = false))
+
+    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, optional = false)
+//    @JoinTable(
+//            name = "doctor_info",
+//            joinColumns = @JoinColumn(name = "doctor_id", insertable = false, updatable = false),
+//            inverseJoinColumns = @JoinColumn(name = "doctor_id", insertable = false, updatable = false))
     private DoctorInfo doctorInfo;
 
     @ManyToMany(fetch = FetchType.EAGER)

@@ -32,7 +32,7 @@ public class DefaultPetService implements PetService {
         if (pets.size() != 0) {
             oldestPet = pets.get(0);
             for (int i = 0; i < pets.size(); i++) {
-                if (oldestPet.getAge() > pets.get(i).getAge()) {
+                if (oldestPet.getAge() < pets.get(i).getAge()) {
                     oldestPet = pets.get(i);
                 }
             }
