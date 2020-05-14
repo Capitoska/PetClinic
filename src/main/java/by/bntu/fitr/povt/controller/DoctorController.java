@@ -50,7 +50,7 @@ public class DoctorController {
     public void addDiagnoses(@PathVariable Integer id, Model model,
                              @RequestParam(name = "diagnoses") String diagnoses) {
         Client client = clientService.getClientByUsername(getCurrentUsername());
-        String doctor = client.getFirstName() + " " + client.getSecondName() + "(" + client.getUsername() + ")" ;
-        visitService.doctorAnswer(visitService.getDiseaseHistoryById(id), client , diagnoses);
+        String doctor = client.getFirstName() + " " + client.getSecondName() + "(" + client.getUsername() + ")";
+        visitService.doctorAnswer(visitService.getDiseaseHistoryById(id), client, diagnoses);
     }
 }

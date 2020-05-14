@@ -36,12 +36,12 @@ public class Pet {
     @Column(name = "gender", nullable = false)
     private String gender;
 
-    @Column(name = "type",nullable = false)
+    @Column(name = "type", nullable = false)
     private String type;
-    @Column(name = "name",nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "age",nullable = false)
+    @Column(name = "age", nullable = false)
     private Integer age;
 
     @OneToMany(fetch = FetchType.EAGER)

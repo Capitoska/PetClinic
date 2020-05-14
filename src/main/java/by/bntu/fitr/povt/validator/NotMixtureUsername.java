@@ -12,6 +12,8 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = NotMixtureUsernameValidator.class)
 public @interface NotMixtureUsername {
     String message() default "Нельзя смешивать русские и английские буквы";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

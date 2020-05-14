@@ -15,8 +15,8 @@ public class HibernateDoctorCardsRepository extends HibernateRepository<DoctorCa
     public DoctorCard find(String card) {
         log.debug("Сравниваю ерунду с карточками доктора");
         log.debug(card);
-        log.debug(sessionFactory.getCurrentSession().createQuery("from DoctorCard where card=:name").setParameter("name",card) !=null);
-        return (DoctorCard)sessionFactory.getCurrentSession().createQuery("from DoctorCard where card=:name").setParameter("name",card).uniqueResult();
+        log.debug(sessionFactory.getCurrentSession().createQuery("from DoctorCard where card=:name").setParameter("name", card) != null);
+        return (DoctorCard) sessionFactory.getCurrentSession().createQuery("from DoctorCard where card=:name").setParameter("name", card).uniqueResult();
     }
 
     @Override

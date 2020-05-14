@@ -15,7 +15,6 @@ public class HibernatePetRepository extends HibernateRepository<Pet> implements 
     }
 
 
-
     @Override
     public void save(Pet entity) {
         super.save(entity);

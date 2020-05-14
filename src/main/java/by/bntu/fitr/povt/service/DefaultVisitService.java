@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class DefaultVisitService implements VisitService  {
+public class DefaultVisitService implements VisitService {
 
     private DiseaseHistoryRepository diseaseHistoryRepository;
 
@@ -22,8 +22,8 @@ public class DefaultVisitService implements VisitService  {
     @Override
     @Transactional
     public void addVisit(Client client, Pet pet, String description, LocalDate date, Specialty doctorType) {
-        DiseaseHistory history = new DiseaseHistory(null,date,
-                null,pet,client,null,description,null, doctorType);
+        DiseaseHistory history = new DiseaseHistory(null, date,
+                null, pet, client, null, description, null, doctorType);
         diseaseHistoryRepository.save(history);
     }
 

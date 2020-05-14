@@ -9,7 +9,10 @@ import java.util.List;
 
 public interface DiseaseHistoryRepository extends Repository<DiseaseHistory> {
     void createDiseaseHistory(DiseaseHistory History);
+
     List<DiseaseHistory> findAllDiseaseHistoryByPet(Pet pet);
+
     DiseaseHistory getDiseaseHistoryById(Integer id);
+
     List<DiseaseHistory> getAllDiseaseBySpecialty(Specialty specialty);
 }

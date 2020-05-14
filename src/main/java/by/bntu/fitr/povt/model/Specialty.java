@@ -8,7 +8,8 @@ public enum Specialty {
     CARDIOLOGIST("Кардиолог"),
     DENTIST("Стоматолог"),
     GYNECOLOGIST("Гинеколог"),
-    PROPHYLACTOLOGIST("Профилактолог"),;
+    PROPHYLACTOLOGIST("Профилактолог"),
+    ;
 
     private String displayName;
 

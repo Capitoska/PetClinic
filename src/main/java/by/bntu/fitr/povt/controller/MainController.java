@@ -63,12 +63,11 @@ public class MainController {
 
 
     /**
-     *
      * регистрация пользователя.
-     * */
+     */
     @GetMapping("/sign-up")
     public String signUp(Model model, @RequestParam(name = "user") String user) {
-        model.addAttribute("signUpUser",new SignUpUserDto());
+        model.addAttribute("signUpUser", new SignUpUserDto());
         if (user.equals("doctor")) {
             model.addAttribute("specialtyList", Arrays.asList(Specialty.values()));
             model.addAttribute("user", "doctor");
@@ -76,21 +75,21 @@ public class MainController {
             return "sign-up";
         }
 
-        model.addAttribute("user","owner");
+        model.addAttribute("user", "owner");
         return "sign-up";
     }
 
     @GetMapping("/tesst")
-    public String testController(Model model, @RequestParam(name = "testiruy") String say){
+    public String testController(Model model, @RequestParam(name = "testiruy") String say) {
         log.info("TEST METHOD WORKED");
         log.info(say);
         return "about";
     }
 
     @GetMapping("/registration")
-    public String registration(Model model, @RequestParam(name = "user") String user){
+    public String registration(Model model, @RequestParam(name = "user") String user) {
         Boolean isDoctor = user.equals("doctor");
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         model.addAttribute("signUpUser", new SignUpUserDto());
         return "sign-up";
     }
@@ -101,20 +100,19 @@ public class MainController {
                                Model model) {
         Boolean isDoctor = user.equals("doctor");
 
-        if(errors.hasErrors()){
-            model.addAttribute("user",user);
+        if (errors.hasErrors()) {
+            model.addAttribute("user", user);
             return "sign-up";
         }
 
-        if(isDoctor){
+        if (isDoctor) {
             Client client = signUpConverter.toDoctor(signUpUserDto);
             doctorService.createDoctor(client);
-        }
-        else{
+        } else {
             Client client = signUpConverter.toOwner(signUpUserDto);
             clientService.createClient(client);
         }
-        model.addAttribute("answer","Вы успешно зарегистрировались! Выполните вход.");
+        model.addAttribute("answer", "Вы успешно зарегистрировались! Выполните вход.");
         return "success-reg";
     }
 

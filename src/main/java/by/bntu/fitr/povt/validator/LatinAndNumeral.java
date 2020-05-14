@@ -13,6 +13,8 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = LatinAndNumeralValidator.class)
 public @interface LatinAndNumeral {
     String message() default "Разрешено использование латиницы и цифр";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }
